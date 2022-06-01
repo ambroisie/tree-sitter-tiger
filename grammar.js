@@ -228,11 +228,25 @@ module.exports = grammar({
 
     _declaration_chunk: ($) => prec.left(
       choice(
+        repeat1($.type_declaration),
         repeat1(choice($.function_declaration, $.primitive_declaration)),
         $.variable_declaration,
         $.import_declaration,
       ),
     ),
+
+    type_declaration: ($) => seq(
+      "type",
+      field("name", $.identifier),
+      "=",
+      field("value", $._type)
+    ),
+
+    _type: ($) => choice(
+      $.type_alias,
+    ),
+
+    type_alias: ($) => $.identifier,
 
     function_declaration: ($) => seq(
       "function",
