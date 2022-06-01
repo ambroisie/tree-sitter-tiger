@@ -1,0 +1,30 @@
+================================================================================
+Array expression
+================================================================================
+
+array_of_int[42] of 0
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (array_expression
+    type: (identifier)
+    size: (integer_literal)
+    init: (integer_literal)))
+
+================================================================================
+Array associativity
+================================================================================
+
+array_of_array_of_int[12] of array_of_int[27] of 0
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (array_expression
+    type: (identifier)
+    size: (integer_literal)
+    init: (array_expression
+      type: (identifier)
+      size: (integer_literal)
+      init: (integer_literal))))

@@ -1,5 +1,89 @@
 [
   {
+    "type": "array_expression",
+    "named": true,
+    "fields": {
+      "init": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "array_expression",
+            "named": true
+          },
+          {
+            "type": "binary_expression",
+            "named": true
+          },
+          {
+            "type": "integer_literal",
+            "named": true
+          },
+          {
+            "type": "nil_literal",
+            "named": true
+          },
+          {
+            "type": "sequence_expression",
+            "named": true
+          },
+          {
+            "type": "string_literal",
+            "named": true
+          },
+          {
+            "type": "unary_expression",
+            "named": true
+          }
+        ]
+      },
+      "size": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "array_expression",
+            "named": true
+          },
+          {
+            "type": "binary_expression",
+            "named": true
+          },
+          {
+            "type": "integer_literal",
+            "named": true
+          },
+          {
+            "type": "nil_literal",
+            "named": true
+          },
+          {
+            "type": "sequence_expression",
+            "named": true
+          },
+          {
+            "type": "string_literal",
+            "named": true
+          },
+          {
+            "type": "unary_expression",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "binary_expression",
     "named": true,
     "fields": {
@@ -7,6 +91,10 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "array_expression",
+            "named": true
+          },
           {
             "type": "binary_expression",
             "named": true
@@ -48,6 +136,10 @@
         "required": true,
         "types": [
           {
+            "type": "array_expression",
+            "named": true
+          },
+          {
             "type": "binary_expression",
             "named": true
           },
@@ -84,6 +176,10 @@
       "required": false,
       "types": [
         {
+          "type": "array_expression",
+          "named": true
+        },
+        {
           "type": "binary_expression",
           "named": true
         },
@@ -118,6 +214,10 @@
       "multiple": false,
       "required": true,
       "types": [
+        {
+          "type": "array_expression",
+          "named": true
+        },
         {
           "type": "binary_expression",
           "named": true
@@ -168,6 +268,10 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "array_expression",
+            "named": true
+          },
           {
             "type": "binary_expression",
             "named": true
@@ -223,7 +327,19 @@
     "named": false
   },
   {
+    "type": "[",
+    "named": false
+  },
+  {
+    "type": "]",
+    "named": false
+  },
+  {
     "type": "escape_sequence",
+    "named": true
+  },
+  {
+    "type": "identifier",
     "named": true
   },
   {
@@ -233,6 +349,10 @@
   {
     "type": "nil_literal",
     "named": true
+  },
+  {
+    "type": "of",
+    "named": false
   },
   {
     "type": "operator",
