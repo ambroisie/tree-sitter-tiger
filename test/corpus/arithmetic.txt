@@ -1,0 +1,141 @@
+================================================================================
+Multiplication / division
+================================================================================
+
+12 * 27 / 42
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (binary_expression
+    left: (binary_expression
+      left: (integer_literal)
+      operator: (operator)
+      right: (integer_literal))
+    operator: (operator)
+    right: (integer_literal)))
+
+================================================================================
+Addition / substraction
+================================================================================
+
+12 + 27 - 42
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (binary_expression
+    left: (binary_expression
+      left: (integer_literal)
+      operator: (operator)
+      right: (integer_literal))
+    operator: (operator)
+    right: (integer_literal)))
+
+================================================================================
+Comparisons
+================================================================================
+
+12 <= 27
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (binary_expression
+    left: (integer_literal)
+    operator: (operator)
+    right: (integer_literal)))
+
+================================================================================
+Non-associative comparisons
+================================================================================
+
+12 <= 27 <= 42
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (binary_expression
+    left: (binary_expression
+      left: (integer_literal)
+      operator: (operator)
+      right: (integer_literal))
+    operator: (operator)
+    right: (integer_literal)))
+
+================================================================================
+And
+================================================================================
+
+12 & 27 & 42
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (binary_expression
+    left: (binary_expression
+      left: (integer_literal)
+      operator: (operator)
+      right: (integer_literal))
+    operator: (operator)
+    right: (integer_literal)))
+
+================================================================================
+Or
+================================================================================
+
+12 | 27 | 42
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (binary_expression
+    left: (binary_expression
+      left: (integer_literal)
+      operator: (operator)
+      right: (integer_literal))
+    operator: (operator)
+    right: (integer_literal)))
+
+================================================================================
+Unary minus
+================================================================================
+
+- - 12
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (unary_expression
+    operator: (operator)
+    expression: (unary_expression
+      operator: (operator)
+      expression: (integer_literal))))
+
+================================================================================
+Precedence
+================================================================================
+
+-1 | 2 & 3 <= 4 + 5 * 6
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (unary_expression
+    operator: (operator)
+    expression: (binary_expression
+      left: (integer_literal)
+      operator: (operator)
+      right: (binary_expression
+        left: (integer_literal)
+        operator: (operator)
+        right: (binary_expression
+          left: (integer_literal)
+          operator: (operator)
+          right: (binary_expression
+            left: (integer_literal)
+            operator: (operator)
+            right: (binary_expression
+              left: (integer_literal)
+              operator: (operator)
+              right: (integer_literal))))))))

@@ -1,3 +1,11 @@
+function sepBy1(sep, rule) {
+  return seq(rule, repeat(seq(sep, rule)))
+}
+
+function sepBy(sep, rule) {
+  return optional(sepBy1(sep, rule))
+}
+
 module.exports = grammar({
   name: "tiger",
 
@@ -10,6 +18,10 @@ module.exports = grammar({
       "nil",
       $.integer_literal,
       $.string_literal,
+
+      $.unary_expression,
+      $.binary_expression,
+      $.sequence_expression,
     ),
 
     integer_literal: (_) => /[0-9]+/,
@@ -35,6 +47,38 @@ module.exports = grammar({
         )
       )
     ),
+
+    unary_expression: ($) => seq(
+      field("operator", alias("-", $.operator)),
+      field("expression", $._expr),
+    ),
+
+    binary_expression: ($) => {
+      const table = [
+        [5, prec.left, choice("*", "/")],
+        [4, prec.left, choice("+", "-")],
+        // FIXME: comparisons should be non-associative
+        // See https://github.com/tree-sitter/tree-sitter/issues/761
+        [3, prec.left, choice(">=", "<=", "=", "<>", "<", ">")],
+        [2, prec.left, "&"],
+        [1, prec.left, "|"],
+      ];
+
+      return choice(
+        ...table.map(
+          ([priority, assoc, operator]) => assoc(
+            priority,
+            seq(
+              field("left", $._expr),
+              field("operator", alias(operator, $.operator)),
+              field("right", $._expr),
+            )
+          )
+        )
+      );
+    },
+
+    sequence_expression: ($) => seq("(", sepBy(";", $._expr), ")"),
   }
 });
 
