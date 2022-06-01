@@ -7,6 +7,67 @@ Empty declarations
 (source_file)
 
 ================================================================================
+Function declaration
+================================================================================
+
+function func(a: int, b: int) = "string"
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (function_declaration
+    name: (identifier)
+    parameters: (parameters
+      name: (identifier)
+      type: (identifier)
+      name: (identifier)
+      type: (identifier))
+    body: (string_literal)))
+
+================================================================================
+Function declaration single parameter
+================================================================================
+
+function func(a: int) = "string"
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (function_declaration
+    name: (identifier)
+    parameters: (parameters
+      name: (identifier)
+      type: (identifier))
+    body: (string_literal)))
+
+================================================================================
+Function declaration no parameters
+================================================================================
+
+function func() = "string"
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (function_declaration
+    name: (identifier)
+    parameters: (parameters)
+    body: (string_literal)))
+
+================================================================================
+Primitive declaration
+================================================================================
+
+primitive prim()
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (primitive_declaration
+    name: (identifier)
+    parameters: (parameters)))
+
+================================================================================
 Variable declaration
 ================================================================================
 

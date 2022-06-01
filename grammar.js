@@ -226,9 +226,41 @@ module.exports = grammar({
 
     _declaration_chunks: ($) => repeat1($._declaration_chunk),
 
-    _declaration_chunk: ($) => choice(
-      $.variable_declaration,
-      $.import_declaration,
+    _declaration_chunk: ($) => prec.left(
+      choice(
+        repeat1(choice($.function_declaration, $.primitive_declaration)),
+        $.variable_declaration,
+        $.import_declaration,
+      ),
+    ),
+
+    function_declaration: ($) => seq(
+      "function",
+      $._function_declaration_common,
+      "=",
+      field("body", $._expr),
+    ),
+
+    primitive_declaration: ($) => seq(
+      "primitive",
+      $._function_declaration_common,
+    ),
+
+    _function_declaration_common: ($) => seq(
+      field("name", $.identifier),
+      field("parameters", $.parameters),
+    ),
+
+    parameters: ($) => seq(
+      "(",
+      field("parameters", sepBy(",", $._typed_field)),
+      ")",
+    ),
+
+    _typed_field: ($) => seq(
+      field("name", $.identifier),
+      ":",
+      field("type", $.identifier),
     ),
 
     variable_declaration: ($) => seq(
