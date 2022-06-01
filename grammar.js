@@ -7,6 +7,7 @@ function sepBy(sep, rule) {
 }
 
 const PREC = {
+  assign: 6,
   multiplicative: 5,
   additive: 4,
   comparative: 3,
@@ -44,6 +45,8 @@ module.exports = grammar({
       $.unary_expression,
       $.binary_expression,
       $.sequence_expression,
+
+      $.assignment_expression,
     ),
 
     nil_literal: (_) => "nil",
@@ -154,6 +157,15 @@ module.exports = grammar({
         ),
       ),
       "}",
+    ),
+
+    assignment_expression: ($) => prec.right(
+      PREC.assign,
+      seq(
+        field("left", $._lvalue),
+        ":=",
+        field("right", $._expr),
+      ),
     ),
   }
 });

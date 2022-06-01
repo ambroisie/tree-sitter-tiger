@@ -138,3 +138,22 @@ f(12,)
     function: (identifier)
     arguments: (integer_literal)
     (ERROR)))
+
+================================================================================
+Assignments
+================================================================================
+
+a := array[12] := record.field
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (assignment_expression
+    left: (identifier)
+    right: (assignment_expression
+      left: (array_value
+        array: (identifier)
+        index: (integer_literal))
+      right: (record_value
+        record: (identifier)
+        field: (identifier)))))

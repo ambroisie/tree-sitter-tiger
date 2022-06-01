@@ -16,6 +16,10 @@
             "named": true
           },
           {
+            "type": "assignment_expression",
+            "named": true
+          },
+          {
             "type": "binary_expression",
             "named": true
           },
@@ -67,6 +71,10 @@
           },
           {
             "type": "array_value",
+            "named": true
+          },
+          {
+            "type": "assignment_expression",
             "named": true
           },
           {
@@ -158,6 +166,92 @@
             "named": true
           },
           {
+            "type": "assignment_expression",
+            "named": true
+          },
+          {
+            "type": "binary_expression",
+            "named": true
+          },
+          {
+            "type": "function_call",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "integer_literal",
+            "named": true
+          },
+          {
+            "type": "nil_literal",
+            "named": true
+          },
+          {
+            "type": "record_expression",
+            "named": true
+          },
+          {
+            "type": "record_value",
+            "named": true
+          },
+          {
+            "type": "sequence_expression",
+            "named": true
+          },
+          {
+            "type": "string_literal",
+            "named": true
+          },
+          {
+            "type": "unary_expression",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "assignment_expression",
+    "named": true,
+    "fields": {
+      "left": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "array_value",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "record_value",
+            "named": true
+          }
+        ]
+      },
+      "right": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "array_expression",
+            "named": true
+          },
+          {
+            "type": "array_value",
+            "named": true
+          },
+          {
+            "type": "assignment_expression",
+            "named": true
+          },
+          {
             "type": "binary_expression",
             "named": true
           },
@@ -215,6 +309,10 @@
           },
           {
             "type": "array_value",
+            "named": true
+          },
+          {
+            "type": "assignment_expression",
             "named": true
           },
           {
@@ -282,6 +380,10 @@
             "named": true
           },
           {
+            "type": "assignment_expression",
+            "named": true
+          },
+          {
             "type": "binary_expression",
             "named": true
           },
@@ -343,6 +445,10 @@
           },
           {
             "type": "array_value",
+            "named": true
+          },
+          {
+            "type": "assignment_expression",
             "named": true
           },
           {
@@ -423,6 +529,10 @@
           },
           {
             "type": "array_value",
+            "named": true
+          },
+          {
+            "type": "assignment_expression",
             "named": true
           },
           {
@@ -530,6 +640,10 @@
           "named": true
         },
         {
+          "type": "assignment_expression",
+          "named": true
+        },
+        {
           "type": "binary_expression",
           "named": true
         },
@@ -586,6 +700,10 @@
         },
         {
           "type": "array_value",
+          "named": true
+        },
+        {
+          "type": "assignment_expression",
           "named": true
         },
         {
@@ -663,6 +781,10 @@
             "named": true
           },
           {
+            "type": "assignment_expression",
+            "named": true
+          },
+          {
             "type": "binary_expression",
             "named": true
           },
@@ -734,6 +856,10 @@
   },
   {
     "type": ".",
+    "named": false
+  },
+  {
+    "type": ":=",
     "named": false
   },
   {
