@@ -28,6 +28,7 @@ module.exports = grammar({
   rules: {
     source_file: ($) => choice(
       $._expr,
+      optional($._declaration_chunks),
     ),
 
     // Expressions {{{
