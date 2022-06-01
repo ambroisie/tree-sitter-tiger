@@ -69,6 +69,10 @@
         {
           "type": "SYMBOL",
           "name": "for_expression"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "break_expression"
         }
       ]
     },
@@ -937,6 +941,10 @@
           }
         }
       ]
+    },
+    "break_expression": {
+      "type": "STRING",
+      "value": "break"
     }
   },
   "extras": [

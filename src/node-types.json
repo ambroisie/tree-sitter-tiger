@@ -24,6 +24,10 @@
             "named": true
           },
           {
+            "type": "break_expression",
+            "named": true
+          },
+          {
             "type": "for_expression",
             "named": true
           },
@@ -91,6 +95,10 @@
           },
           {
             "type": "binary_expression",
+            "named": true
+          },
+          {
+            "type": "break_expression",
             "named": true
           },
           {
@@ -198,6 +206,10 @@
             "named": true
           },
           {
+            "type": "break_expression",
+            "named": true
+          },
+          {
             "type": "for_expression",
             "named": true
           },
@@ -292,6 +304,10 @@
             "named": true
           },
           {
+            "type": "break_expression",
+            "named": true
+          },
+          {
             "type": "for_expression",
             "named": true
           },
@@ -365,6 +381,10 @@
           },
           {
             "type": "binary_expression",
+            "named": true
+          },
+          {
+            "type": "break_expression",
             "named": true
           },
           {
@@ -448,6 +468,10 @@
             "named": true
           },
           {
+            "type": "break_expression",
+            "named": true
+          },
+          {
             "type": "for_expression",
             "named": true
           },
@@ -524,6 +548,10 @@
             "named": true
           },
           {
+            "type": "break_expression",
+            "named": true
+          },
+          {
             "type": "for_expression",
             "named": true
           },
@@ -591,6 +619,10 @@
           },
           {
             "type": "binary_expression",
+            "named": true
+          },
+          {
+            "type": "break_expression",
             "named": true
           },
           {
@@ -674,6 +706,10 @@
             "named": true
           },
           {
+            "type": "break_expression",
+            "named": true
+          },
+          {
             "type": "for_expression",
             "named": true
           },
@@ -751,6 +787,10 @@
           },
           {
             "type": "binary_expression",
+            "named": true
+          },
+          {
+            "type": "break_expression",
             "named": true
           },
           {
@@ -840,6 +880,10 @@
             "named": true
           },
           {
+            "type": "break_expression",
+            "named": true
+          },
+          {
             "type": "for_expression",
             "named": true
           },
@@ -910,6 +954,10 @@
             "named": true
           },
           {
+            "type": "break_expression",
+            "named": true
+          },
+          {
             "type": "for_expression",
             "named": true
           },
@@ -977,6 +1025,10 @@
           },
           {
             "type": "binary_expression",
+            "named": true
+          },
+          {
+            "type": "break_expression",
             "named": true
           },
           {
@@ -1063,6 +1115,10 @@
           },
           {
             "type": "binary_expression",
+            "named": true
+          },
+          {
+            "type": "break_expression",
             "named": true
           },
           {
@@ -1186,6 +1242,10 @@
           "named": true
         },
         {
+          "type": "break_expression",
+          "named": true
+        },
+        {
           "type": "for_expression",
           "named": true
         },
@@ -1258,6 +1318,10 @@
         },
         {
           "type": "binary_expression",
+          "named": true
+        },
+        {
+          "type": "break_expression",
           "named": true
         },
         {
@@ -1351,6 +1415,10 @@
             "named": true
           },
           {
+            "type": "break_expression",
+            "named": true
+          },
+          {
             "type": "for_expression",
             "named": true
           },
@@ -1437,6 +1505,10 @@
             "named": true
           },
           {
+            "type": "break_expression",
+            "named": true
+          },
+          {
             "type": "for_expression",
             "named": true
           },
@@ -1504,6 +1576,10 @@
           },
           {
             "type": "binary_expression",
+            "named": true
+          },
+          {
+            "type": "break_expression",
             "named": true
           },
           {
@@ -1597,6 +1673,10 @@
   {
     "type": "]",
     "named": false
+  },
+  {
+    "type": "break_expression",
+    "named": true
   },
   {
     "type": "do",

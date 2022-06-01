@@ -51,6 +51,7 @@ module.exports = grammar({
       $.if_expression,
       $.while_expression,
       $.for_expression,
+      $.break_expression,
     ),
 
     nil_literal: (_) => "nil",
@@ -204,6 +205,8 @@ module.exports = grammar({
       "do",
       field("body", $._expr),
     ),
+
+    break_expression: (_) => "break",
   }
 });
 
