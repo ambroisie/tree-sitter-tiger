@@ -1,0 +1,123 @@
+================================================================================
+Let expression
+================================================================================
+
+let
+  import "a.tih"
+in
+  12
+end
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (let_expression
+    declarations: (import_declaration
+      file: (string_literal))
+    body: (integer_literal)))
+
+================================================================================
+Let multiple declarations
+================================================================================
+
+let
+  import "a.tih"
+  import "b.tih"
+in
+  12
+end
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (let_expression
+    declarations: (import_declaration
+      file: (string_literal))
+    declarations: (import_declaration
+      file: (string_literal))
+    body: (integer_literal)))
+
+================================================================================
+Let multiple expressions
+================================================================================
+
+let
+  import "a.tih"
+in
+  12;
+  27
+end
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (let_expression
+    declarations: (import_declaration
+      file: (string_literal))
+    body: (integer_literal)
+    body: (integer_literal)))
+
+================================================================================
+Let multiple expressions and declarations
+================================================================================
+
+let
+  import "a.tih"
+  import "b.tih"
+in
+  12;
+  27
+end
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (let_expression
+    declarations: (import_declaration
+      file: (string_literal))
+    declarations: (import_declaration
+      file: (string_literal))
+    body: (integer_literal)
+    body: (integer_literal)))
+
+================================================================================
+Let empty declarations
+================================================================================
+
+let
+in
+  42
+end
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (let_expression
+    body: (integer_literal)))
+
+================================================================================
+Let empty expressions
+================================================================================
+
+let
+  import "a.tih"
+in
+end
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (let_expression
+    declarations: (import_declaration
+      file: (string_literal))))
+
+================================================================================
+Let empty
+================================================================================
+
+let in end
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (let_expression))

@@ -48,6 +48,10 @@
             "named": true
           },
           {
+            "type": "let_expression",
+            "named": true
+          },
+          {
             "type": "nil_literal",
             "named": true
           },
@@ -119,6 +123,10 @@
           },
           {
             "type": "integer_literal",
+            "named": true
+          },
+          {
+            "type": "let_expression",
             "named": true
           },
           {
@@ -230,6 +238,10 @@
             "named": true
           },
           {
+            "type": "let_expression",
+            "named": true
+          },
+          {
             "type": "nil_literal",
             "named": true
           },
@@ -328,6 +340,10 @@
             "named": true
           },
           {
+            "type": "let_expression",
+            "named": true
+          },
+          {
             "type": "nil_literal",
             "named": true
           },
@@ -405,6 +421,10 @@
           },
           {
             "type": "integer_literal",
+            "named": true
+          },
+          {
+            "type": "let_expression",
             "named": true
           },
           {
@@ -492,6 +512,10 @@
             "named": true
           },
           {
+            "type": "let_expression",
+            "named": true
+          },
+          {
             "type": "nil_literal",
             "named": true
           },
@@ -572,6 +596,10 @@
             "named": true
           },
           {
+            "type": "let_expression",
+            "named": true
+          },
+          {
             "type": "nil_literal",
             "named": true
           },
@@ -643,6 +671,10 @@
           },
           {
             "type": "integer_literal",
+            "named": true
+          },
+          {
+            "type": "let_expression",
             "named": true
           },
           {
@@ -730,6 +762,10 @@
             "named": true
           },
           {
+            "type": "let_expression",
+            "named": true
+          },
+          {
             "type": "nil_literal",
             "named": true
           },
@@ -811,6 +847,10 @@
           },
           {
             "type": "integer_literal",
+            "named": true
+          },
+          {
+            "type": "let_expression",
             "named": true
           },
           {
@@ -904,6 +944,10 @@
             "named": true
           },
           {
+            "type": "let_expression",
+            "named": true
+          },
+          {
             "type": "nil_literal",
             "named": true
           },
@@ -975,6 +1019,10 @@
           },
           {
             "type": "integer_literal",
+            "named": true
+          },
+          {
+            "type": "let_expression",
             "named": true
           },
           {
@@ -1052,6 +1100,10 @@
             "named": true
           },
           {
+            "type": "let_expression",
+            "named": true
+          },
+          {
             "type": "nil_literal",
             "named": true
           },
@@ -1077,6 +1129,120 @@
           },
           {
             "type": "while_expression",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "import_declaration",
+    "named": true,
+    "fields": {
+      "file": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "string_literal",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "let_expression",
+    "named": true,
+    "fields": {
+      "body": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": ";",
+            "named": false
+          },
+          {
+            "type": "array_expression",
+            "named": true
+          },
+          {
+            "type": "array_value",
+            "named": true
+          },
+          {
+            "type": "assignment_expression",
+            "named": true
+          },
+          {
+            "type": "binary_expression",
+            "named": true
+          },
+          {
+            "type": "break_expression",
+            "named": true
+          },
+          {
+            "type": "for_expression",
+            "named": true
+          },
+          {
+            "type": "function_call",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "if_expression",
+            "named": true
+          },
+          {
+            "type": "integer_literal",
+            "named": true
+          },
+          {
+            "type": "let_expression",
+            "named": true
+          },
+          {
+            "type": "nil_literal",
+            "named": true
+          },
+          {
+            "type": "record_expression",
+            "named": true
+          },
+          {
+            "type": "record_value",
+            "named": true
+          },
+          {
+            "type": "sequence_expression",
+            "named": true
+          },
+          {
+            "type": "string_literal",
+            "named": true
+          },
+          {
+            "type": "unary_expression",
+            "named": true
+          },
+          {
+            "type": "while_expression",
+            "named": true
+          }
+        ]
+      },
+      "declarations": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "import_declaration",
             "named": true
           }
         ]
@@ -1139,6 +1305,10 @@
           },
           {
             "type": "integer_literal",
+            "named": true
+          },
+          {
+            "type": "let_expression",
             "named": true
           },
           {
@@ -1266,6 +1436,10 @@
           "named": true
         },
         {
+          "type": "let_expression",
+          "named": true
+        },
+        {
           "type": "nil_literal",
           "named": true
         },
@@ -1342,6 +1516,10 @@
         },
         {
           "type": "integer_literal",
+          "named": true
+        },
+        {
+          "type": "let_expression",
           "named": true
         },
         {
@@ -1439,6 +1617,10 @@
             "named": true
           },
           {
+            "type": "let_expression",
+            "named": true
+          },
+          {
             "type": "nil_literal",
             "named": true
           },
@@ -1529,6 +1711,10 @@
             "named": true
           },
           {
+            "type": "let_expression",
+            "named": true
+          },
+          {
             "type": "nil_literal",
             "named": true
           },
@@ -1600,6 +1786,10 @@
           },
           {
             "type": "integer_literal",
+            "named": true
+          },
+          {
+            "type": "let_expression",
             "named": true
           },
           {
@@ -1687,6 +1877,10 @@
     "named": false
   },
   {
+    "type": "end",
+    "named": false
+  },
+  {
     "type": "escape_sequence",
     "named": true
   },
@@ -1703,8 +1897,20 @@
     "named": false
   },
   {
+    "type": "import",
+    "named": false
+  },
+  {
+    "type": "in",
+    "named": false
+  },
+  {
     "type": "integer_literal",
     "named": true
+  },
+  {
+    "type": "let",
+    "named": false
   },
   {
     "type": "nil_literal",

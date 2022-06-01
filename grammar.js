@@ -54,6 +54,7 @@ module.exports = grammar({
       $.while_expression,
       $.for_expression,
       $.break_expression,
+      $.let_expression,
     ),
 
     nil_literal: (_) => "nil",
@@ -209,6 +210,29 @@ module.exports = grammar({
     ),
 
     break_expression: (_) => "break",
+
+    let_expression: ($) => seq(
+      "let",
+      field("declarations", optional($._declaration_chunks)),
+      "in",
+      field("body", sepBy(";", $._expr)),
+      "end",
+    ),
+
+    // }}}
+
+    // Declarations {{{
+
+    _declaration_chunks: ($) => repeat1($._declaration_chunk),
+
+    _declaration_chunk: ($) => choice(
+      $.import_declaration,
+    ),
+
+    import_declaration: ($) => seq(
+      "import",
+      field("file", $.string_literal),
+    ),
 
     // }}}
   }
