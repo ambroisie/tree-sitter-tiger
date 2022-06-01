@@ -1,5 +1,6 @@
 {
   "name": "tiger",
+  "word": "identifier",
   "rules": {
     "source_file": {
       "type": "CHOICE",
@@ -71,6 +72,10 @@
           "value": "\""
         }
       ]
+    },
+    "identifier": {
+      "type": "PATTERN",
+      "value": "[_a-zA-Z0-9]+"
     },
     "escape_sequence": {
       "type": "IMMEDIATE_TOKEN",

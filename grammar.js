@@ -17,6 +17,9 @@ const PREC = {
 module.exports = grammar({
   name: "tiger",
 
+  // Ensure we don't extract keywords from tokens
+  word: ($) => $.identifier,
+
   rules: {
     source_file: ($) => choice(
       $._expr,
@@ -39,6 +42,9 @@ module.exports = grammar({
       repeat(choice($.escape_sequence, /[^"\\]+/)),
       '"',
     ),
+
+    // NOTE: includes reserved identifiers
+    identifier: (_) => /[_a-zA-Z0-9]+/,
 
     escape_sequence: (_) => token.immediate(
       seq(
