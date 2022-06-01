@@ -30,6 +30,8 @@ module.exports = grammar({
       $._expr,
     ),
 
+    // Expressions {{{
+
     _expr: ($) => choice(
       $.nil_literal,
       $.integer_literal,
@@ -207,6 +209,8 @@ module.exports = grammar({
     ),
 
     break_expression: (_) => "break",
+
+    // }}}
   }
 });
 
