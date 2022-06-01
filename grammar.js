@@ -33,6 +33,8 @@ module.exports = grammar({
       $.array_expression,
       $.record_expression,
 
+      $.function_call,
+
       $.unary_expression,
       $.binary_expression,
       $.sequence_expression,
@@ -65,6 +67,13 @@ module.exports = grammar({
           choice("\\", '"'),
         )
       )
+    ),
+
+    function_call: ($) => seq(
+      field("function", $.identifier),
+      "(",
+      field("arguments", sepBy(",", $._expr)),
+      ")",
     ),
 
     unary_expression: ($) => seq(
