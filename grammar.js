@@ -20,6 +20,10 @@ module.exports = grammar({
   // Ensure we don't extract keywords from tokens
   word: ($) => $.identifier,
 
+  conflicts: ($) => [
+    [$._lvalue, $.array_expression],
+  ],
+
   rules: {
     source_file: ($) => choice(
       $._expr,
@@ -32,6 +36,8 @@ module.exports = grammar({
 
       $.array_expression,
       $.record_expression,
+
+      $._lvalue,
 
       $.function_call,
 
@@ -67,6 +73,25 @@ module.exports = grammar({
           choice("\\", '"'),
         )
       )
+    ),
+
+    _lvalue: ($) => choice(
+      $.identifier,
+      $.record_value,
+      $.array_value,
+    ),
+
+    record_value: ($) => seq(
+      field("record", $._lvalue),
+      ".",
+      field("field", $.identifier),
+    ),
+
+    array_value: ($) => seq(
+      field("array", $._lvalue),
+      "[",
+      field("index", $._expr),
+      "]",
     ),
 
     function_call: ($) => seq(

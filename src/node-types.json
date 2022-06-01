@@ -12,11 +12,19 @@
             "named": true
           },
           {
+            "type": "array_value",
+            "named": true
+          },
+          {
             "type": "binary_expression",
             "named": true
           },
           {
             "type": "function_call",
+            "named": true
+          },
+          {
+            "type": "identifier",
             "named": true
           },
           {
@@ -29,6 +37,10 @@
           },
           {
             "type": "record_expression",
+            "named": true
+          },
+          {
+            "type": "record_value",
             "named": true
           },
           {
@@ -54,11 +66,19 @@
             "named": true
           },
           {
+            "type": "array_value",
+            "named": true
+          },
+          {
             "type": "binary_expression",
             "named": true
           },
           {
             "type": "function_call",
+            "named": true
+          },
+          {
+            "type": "identifier",
             "named": true
           },
           {
@@ -71,6 +91,10 @@
           },
           {
             "type": "record_expression",
+            "named": true
+          },
+          {
+            "type": "record_value",
             "named": true
           },
           {
@@ -100,10 +124,28 @@
     }
   },
   {
-    "type": "binary_expression",
+    "type": "array_value",
     "named": true,
     "fields": {
-      "left": {
+      "array": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "array_value",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "record_value",
+            "named": true
+          }
+        ]
+      },
+      "index": {
         "multiple": false,
         "required": true,
         "types": [
@@ -112,11 +154,19 @@
             "named": true
           },
           {
+            "type": "array_value",
+            "named": true
+          },
+          {
             "type": "binary_expression",
             "named": true
           },
           {
             "type": "function_call",
+            "named": true
+          },
+          {
+            "type": "identifier",
             "named": true
           },
           {
@@ -129,6 +179,70 @@
           },
           {
             "type": "record_expression",
+            "named": true
+          },
+          {
+            "type": "record_value",
+            "named": true
+          },
+          {
+            "type": "sequence_expression",
+            "named": true
+          },
+          {
+            "type": "string_literal",
+            "named": true
+          },
+          {
+            "type": "unary_expression",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "binary_expression",
+    "named": true,
+    "fields": {
+      "left": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "array_expression",
+            "named": true
+          },
+          {
+            "type": "array_value",
+            "named": true
+          },
+          {
+            "type": "binary_expression",
+            "named": true
+          },
+          {
+            "type": "function_call",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "integer_literal",
+            "named": true
+          },
+          {
+            "type": "nil_literal",
+            "named": true
+          },
+          {
+            "type": "record_expression",
+            "named": true
+          },
+          {
+            "type": "record_value",
             "named": true
           },
           {
@@ -164,11 +278,19 @@
             "named": true
           },
           {
+            "type": "array_value",
+            "named": true
+          },
+          {
             "type": "binary_expression",
             "named": true
           },
           {
             "type": "function_call",
+            "named": true
+          },
+          {
+            "type": "identifier",
             "named": true
           },
           {
@@ -181,6 +303,10 @@
           },
           {
             "type": "record_expression",
+            "named": true
+          },
+          {
+            "type": "record_value",
             "named": true
           },
           {
@@ -216,11 +342,19 @@
             "named": true
           },
           {
+            "type": "array_value",
+            "named": true
+          },
+          {
             "type": "binary_expression",
             "named": true
           },
           {
             "type": "function_call",
+            "named": true
+          },
+          {
+            "type": "identifier",
             "named": true
           },
           {
@@ -233,6 +367,10 @@
           },
           {
             "type": "record_expression",
+            "named": true
+          },
+          {
+            "type": "record_value",
             "named": true
           },
           {
@@ -284,11 +422,19 @@
             "named": true
           },
           {
+            "type": "array_value",
+            "named": true
+          },
+          {
             "type": "binary_expression",
             "named": true
           },
           {
             "type": "function_call",
+            "named": true
+          },
+          {
+            "type": "identifier",
             "named": true
           },
           {
@@ -301,6 +447,10 @@
           },
           {
             "type": "record_expression",
+            "named": true
+          },
+          {
+            "type": "record_value",
             "named": true
           },
           {
@@ -330,6 +480,40 @@
     }
   },
   {
+    "type": "record_value",
+    "named": true,
+    "fields": {
+      "field": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "record": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "array_value",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "record_value",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "sequence_expression",
     "named": true,
     "fields": {},
@@ -342,11 +526,19 @@
           "named": true
         },
         {
+          "type": "array_value",
+          "named": true
+        },
+        {
           "type": "binary_expression",
           "named": true
         },
         {
           "type": "function_call",
+          "named": true
+        },
+        {
+          "type": "identifier",
           "named": true
         },
         {
@@ -359,6 +551,10 @@
         },
         {
           "type": "record_expression",
+          "named": true
+        },
+        {
+          "type": "record_value",
           "named": true
         },
         {
@@ -389,11 +585,19 @@
           "named": true
         },
         {
+          "type": "array_value",
+          "named": true
+        },
+        {
           "type": "binary_expression",
           "named": true
         },
         {
           "type": "function_call",
+          "named": true
+        },
+        {
+          "type": "identifier",
           "named": true
         },
         {
@@ -406,6 +610,10 @@
         },
         {
           "type": "record_expression",
+          "named": true
+        },
+        {
+          "type": "record_value",
           "named": true
         },
         {
@@ -451,11 +659,19 @@
             "named": true
           },
           {
+            "type": "array_value",
+            "named": true
+          },
+          {
             "type": "binary_expression",
             "named": true
           },
           {
             "type": "function_call",
+            "named": true
+          },
+          {
+            "type": "identifier",
             "named": true
           },
           {
@@ -468,6 +684,10 @@
           },
           {
             "type": "record_expression",
+            "named": true
+          },
+          {
+            "type": "record_value",
             "named": true
           },
           {
@@ -510,6 +730,10 @@
   },
   {
     "type": ",",
+    "named": false
+  },
+  {
+    "type": ".",
     "named": false
   },
   {
