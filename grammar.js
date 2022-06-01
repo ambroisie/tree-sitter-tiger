@@ -227,7 +227,16 @@ module.exports = grammar({
     _declaration_chunks: ($) => repeat1($._declaration_chunk),
 
     _declaration_chunk: ($) => choice(
+      $.variable_declaration,
       $.import_declaration,
+    ),
+
+    variable_declaration: ($) => seq(
+      "var",
+      field("name", $.identifier),
+      optional(seq(":", field("type", $.identifier))),
+      ":=",
+      field("value", $._expr),
     ),
 
     import_declaration: ($) => seq(
