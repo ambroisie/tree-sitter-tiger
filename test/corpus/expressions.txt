@@ -28,3 +28,60 @@ array_of_array_of_int[12] of array_of_int[27] of 0
       type: (identifier)
       size: (integer_literal)
       init: (integer_literal))))
+
+================================================================================
+Record expression
+================================================================================
+
+record_type { a = 12, b = "27" }
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (record_expression
+    type: (identifier)
+    field: (identifier)
+    init: (integer_literal)
+    field: (identifier)
+    init: (string_literal)))
+
+================================================================================
+Record expression single field
+================================================================================
+
+record_type { a = 12 }
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (record_expression
+    type: (identifier)
+    field: (identifier)
+    init: (integer_literal)))
+
+================================================================================
+Record expression no fields
+================================================================================
+
+record_type {}
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (record_expression
+    type: (identifier)))
+
+================================================================================
+Record expression trailing comma
+================================================================================
+
+record_type { a = 12, }
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (record_expression
+    type: (identifier)
+    field: (identifier)
+    init: (integer_literal)
+    (ERROR)))

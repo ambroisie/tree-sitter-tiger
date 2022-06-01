@@ -31,6 +31,7 @@ module.exports = grammar({
       $.string_literal,
 
       $.array_expression,
+      $.record_expression,
 
       $.unary_expression,
       $.binary_expression,
@@ -105,6 +106,20 @@ module.exports = grammar({
       "]",
       "of",
       field("init", $._expr),
+    ),
+
+    record_expression: ($) => seq(
+      field("type", $.identifier),
+      "{",
+      sepBy(
+        ",",
+        seq(
+          field("field", $.identifier),
+          "=",
+          field("init", $._expr),
+        ),
+      ),
+      "}",
     ),
   }
 });

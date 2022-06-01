@@ -24,6 +24,10 @@
             "named": true
           },
           {
+            "type": "record_expression",
+            "named": true
+          },
+          {
             "type": "sequence_expression",
             "named": true
           },
@@ -55,6 +59,10 @@
           },
           {
             "type": "nil_literal",
+            "named": true
+          },
+          {
+            "type": "record_expression",
             "named": true
           },
           {
@@ -108,6 +116,10 @@
             "named": true
           },
           {
+            "type": "record_expression",
+            "named": true
+          },
+          {
             "type": "sequence_expression",
             "named": true
           },
@@ -152,6 +164,10 @@
             "named": true
           },
           {
+            "type": "record_expression",
+            "named": true
+          },
+          {
             "type": "sequence_expression",
             "named": true
           },
@@ -161,6 +177,70 @@
           },
           {
             "type": "unary_expression",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "record_expression",
+    "named": true,
+    "fields": {
+      "field": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "init": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "array_expression",
+            "named": true
+          },
+          {
+            "type": "binary_expression",
+            "named": true
+          },
+          {
+            "type": "integer_literal",
+            "named": true
+          },
+          {
+            "type": "nil_literal",
+            "named": true
+          },
+          {
+            "type": "record_expression",
+            "named": true
+          },
+          {
+            "type": "sequence_expression",
+            "named": true
+          },
+          {
+            "type": "string_literal",
+            "named": true
+          },
+          {
+            "type": "unary_expression",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
             "named": true
           }
         ]
@@ -189,6 +269,10 @@
         },
         {
           "type": "nil_literal",
+          "named": true
+        },
+        {
+          "type": "record_expression",
           "named": true
         },
         {
@@ -228,6 +312,10 @@
         },
         {
           "type": "nil_literal",
+          "named": true
+        },
+        {
+          "type": "record_expression",
           "named": true
         },
         {
@@ -285,6 +373,10 @@
             "named": true
           },
           {
+            "type": "record_expression",
+            "named": true
+          },
+          {
             "type": "sequence_expression",
             "named": true
           },
@@ -323,7 +415,15 @@
     "named": false
   },
   {
+    "type": ",",
+    "named": false
+  },
+  {
     "type": ";",
+    "named": false
+  },
+  {
+    "type": "=",
     "named": false
   },
   {
@@ -357,5 +457,13 @@
   {
     "type": "operator",
     "named": true
+  },
+  {
+    "type": "{",
+    "named": false
+  },
+  {
+    "type": "}",
+    "named": false
   }
 ]
