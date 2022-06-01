@@ -26,7 +26,7 @@ module.exports = grammar({
     ),
 
     _expr: ($) => choice(
-      "nil",
+      $.nil_literal,
       $.integer_literal,
       $.string_literal,
 
@@ -34,6 +34,8 @@ module.exports = grammar({
       $.binary_expression,
       $.sequence_expression,
     ),
+
+    nil_literal: (_) => "nil",
 
     integer_literal: (_) => /[0-9]+/,
 

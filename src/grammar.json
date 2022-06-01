@@ -15,8 +15,8 @@
       "type": "CHOICE",
       "members": [
         {
-          "type": "STRING",
-          "value": "nil"
+          "type": "SYMBOL",
+          "name": "nil_literal"
         },
         {
           "type": "SYMBOL",
@@ -39,6 +39,10 @@
           "name": "sequence_expression"
         }
       ]
+    },
+    "nil_literal": {
+      "type": "STRING",
+      "value": "nil"
     },
     "integer_literal": {
       "type": "PATTERN",

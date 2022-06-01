@@ -18,7 +18,7 @@
 
 enum {
   sym_identifier = 1,
-  anon_sym_nil = 2,
+  sym_nil_literal = 2,
   sym_integer_literal = 3,
   anon_sym_DQUOTE = 4,
   aux_sym_string_literal_token1 = 5,
@@ -51,7 +51,7 @@ enum {
 static const char * const ts_symbol_names[] = {
   [ts_builtin_sym_end] = "end",
   [sym_identifier] = "identifier",
-  [anon_sym_nil] = "nil",
+  [sym_nil_literal] = "nil_literal",
   [sym_integer_literal] = "integer_literal",
   [anon_sym_DQUOTE] = "\"",
   [aux_sym_string_literal_token1] = "string_literal_token1",
@@ -84,7 +84,7 @@ static const char * const ts_symbol_names[] = {
 static const TSSymbol ts_symbol_map[] = {
   [ts_builtin_sym_end] = ts_builtin_sym_end,
   [sym_identifier] = sym_identifier,
-  [anon_sym_nil] = anon_sym_nil,
+  [sym_nil_literal] = sym_nil_literal,
   [sym_integer_literal] = sym_integer_literal,
   [anon_sym_DQUOTE] = anon_sym_DQUOTE,
   [aux_sym_string_literal_token1] = aux_sym_string_literal_token1,
@@ -123,9 +123,9 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
     .visible = true,
     .named = true,
   },
-  [anon_sym_nil] = {
+  [sym_nil_literal] = {
     .visible = true,
-    .named = false,
+    .named = true,
   },
   [sym_integer_literal] = {
     .visible = true,
@@ -390,10 +390,10 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       ACCEPT_TOKEN(ts_builtin_sym_end);
       END_STATE();
     case 12:
-      ACCEPT_TOKEN(anon_sym_nil);
+      ACCEPT_TOKEN(sym_nil_literal);
       END_STATE();
     case 13:
-      ACCEPT_TOKEN(anon_sym_nil);
+      ACCEPT_TOKEN(sym_nil_literal);
       if (('0' <= lookahead && lookahead <= '9') ||
           ('A' <= lookahead && lookahead <= 'Z') ||
           lookahead == '_' ||
@@ -557,7 +557,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
   [0] = {
     [ts_builtin_sym_end] = ACTIONS(1),
     [sym_identifier] = ACTIONS(1),
-    [anon_sym_nil] = ACTIONS(1),
+    [sym_nil_literal] = ACTIONS(1),
     [sym_integer_literal] = ACTIONS(1),
     [anon_sym_DQUOTE] = ACTIONS(1),
     [sym_escape_sequence] = ACTIONS(1),
@@ -584,7 +584,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_unary_expression] = STATE(15),
     [sym_binary_expression] = STATE(15),
     [sym_sequence_expression] = STATE(15),
-    [anon_sym_nil] = ACTIONS(3),
+    [sym_nil_literal] = ACTIONS(3),
     [sym_integer_literal] = ACTIONS(3),
     [anon_sym_DQUOTE] = ACTIONS(5),
     [anon_sym_DASH] = ACTIONS(7),
@@ -884,7 +884,7 @@ static const uint16_t ts_small_parse_table[] = {
     ACTIONS(59), 1,
       anon_sym_RPAREN,
     ACTIONS(57), 2,
-      anon_sym_nil,
+      sym_nil_literal,
       sym_integer_literal,
     STATE(9), 5,
       sym__expr,
@@ -900,7 +900,7 @@ static const uint16_t ts_small_parse_table[] = {
     ACTIONS(9), 1,
       anon_sym_LPAREN,
     ACTIONS(61), 2,
-      anon_sym_nil,
+      sym_nil_literal,
       sym_integer_literal,
     STATE(10), 5,
       sym__expr,
@@ -916,7 +916,7 @@ static const uint16_t ts_small_parse_table[] = {
     ACTIONS(9), 1,
       anon_sym_LPAREN,
     ACTIONS(63), 2,
-      anon_sym_nil,
+      sym_nil_literal,
       sym_integer_literal,
     STATE(14), 5,
       sym__expr,
@@ -932,7 +932,7 @@ static const uint16_t ts_small_parse_table[] = {
     ACTIONS(9), 1,
       anon_sym_LPAREN,
     ACTIONS(65), 2,
-      anon_sym_nil,
+      sym_nil_literal,
       sym_integer_literal,
     STATE(4), 5,
       sym__expr,
@@ -948,7 +948,7 @@ static const uint16_t ts_small_parse_table[] = {
     ACTIONS(9), 1,
       anon_sym_LPAREN,
     ACTIONS(67), 2,
-      anon_sym_nil,
+      sym_nil_literal,
       sym_integer_literal,
     STATE(6), 5,
       sym__expr,
@@ -964,7 +964,7 @@ static const uint16_t ts_small_parse_table[] = {
     ACTIONS(9), 1,
       anon_sym_LPAREN,
     ACTIONS(69), 2,
-      anon_sym_nil,
+      sym_nil_literal,
       sym_integer_literal,
     STATE(11), 5,
       sym__expr,
@@ -980,7 +980,7 @@ static const uint16_t ts_small_parse_table[] = {
     ACTIONS(9), 1,
       anon_sym_LPAREN,
     ACTIONS(71), 2,
-      anon_sym_nil,
+      sym_nil_literal,
       sym_integer_literal,
     STATE(2), 5,
       sym__expr,
@@ -996,7 +996,7 @@ static const uint16_t ts_small_parse_table[] = {
     ACTIONS(9), 1,
       anon_sym_LPAREN,
     ACTIONS(73), 2,
-      anon_sym_nil,
+      sym_nil_literal,
       sym_integer_literal,
     STATE(7), 5,
       sym__expr,
