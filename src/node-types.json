@@ -172,6 +172,22 @@
     }
   },
   {
+    "type": "array_type",
+    "named": true,
+    "fields": {
+      "element_type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "array_value",
     "named": true,
     "fields": {
@@ -1838,6 +1854,10 @@
         "required": true,
         "types": [
           {
+            "type": "array_type",
+            "named": true
+          },
+          {
             "type": "record_type",
             "named": true
           },
@@ -2251,6 +2271,10 @@
   },
   {
     "type": "]",
+    "named": false
+  },
+  {
+    "type": "array",
     "named": false
   },
   {

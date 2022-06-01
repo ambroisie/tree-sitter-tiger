@@ -1118,6 +1118,10 @@
         {
           "type": "SYMBOL",
           "name": "record_type"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "array_type"
         }
       ]
     },
@@ -1189,6 +1193,27 @@
         {
           "type": "FIELD",
           "name": "type",
+          "content": {
+            "type": "SYMBOL",
+            "name": "identifier"
+          }
+        }
+      ]
+    },
+    "array_type": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "array"
+        },
+        {
+          "type": "STRING",
+          "value": "of"
+        },
+        {
+          "type": "FIELD",
+          "name": "element_type",
           "content": {
             "type": "SYMBOL",
             "name": "identifier"

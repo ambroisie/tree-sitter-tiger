@@ -245,6 +245,7 @@ module.exports = grammar({
     _type: ($) => choice(
       $.type_alias,
       $.record_type,
+      $.array_type,
     ),
 
     type_alias: ($) => $.identifier,
@@ -259,6 +260,12 @@ module.exports = grammar({
       field("name", $.identifier),
       ":",
       field("type", $.identifier),
+    ),
+
+    array_type: ($) => seq(
+      "array",
+      "of",
+      field("element_type", $.identifier),
     ),
 
     function_declaration: ($) => seq(

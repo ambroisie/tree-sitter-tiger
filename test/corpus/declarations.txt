@@ -82,6 +82,37 @@ type record = { a: int, }
       (ERROR))))
 
 ================================================================================
+Array type declaration
+================================================================================
+
+type array_of_int = array of int
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (type_declaration
+    name: (identifier)
+    value: (array_type
+      element_type: (identifier))))
+
+================================================================================
+Array type declaration non-associativity
+================================================================================
+
+type array_of_array_of_int = array of array of int
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (ERROR
+    (type_declaration
+      name: (identifier)
+      value: (array_type
+        element_type: (identifier)))
+    (identifier))
+  (identifier))
+
+================================================================================
 Function declaration
 ================================================================================
 
