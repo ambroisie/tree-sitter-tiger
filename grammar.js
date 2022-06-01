@@ -47,6 +47,8 @@ module.exports = grammar({
       $.sequence_expression,
 
       $.assignment_expression,
+
+      $.if_expression,
     ),
 
     nil_literal: (_) => "nil",
@@ -165,6 +167,21 @@ module.exports = grammar({
         field("left", $._lvalue),
         ":=",
         field("right", $._expr),
+      ),
+    ),
+
+    if_expression: ($) => prec.right(
+      seq(
+        "if",
+        field("condition", $._expr),
+        "then",
+        field("consequence", $._expr),
+        optional(
+          seq(
+            "else",
+            field("alternative", $._expr),
+          ),
+        ),
       ),
     ),
   }

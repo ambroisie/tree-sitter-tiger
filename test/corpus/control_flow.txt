@@ -1,0 +1,42 @@
+================================================================================
+If then else
+================================================================================
+
+if 12 then 27 else 42
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (if_expression
+    condition: (integer_literal)
+    consequence: (integer_literal)
+    alternative: (integer_literal)))
+
+================================================================================
+If then
+================================================================================
+
+if 12 then 27
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (if_expression
+    condition: (integer_literal)
+    consequence: (integer_literal)))
+
+================================================================================
+Dangling else
+================================================================================
+
+if 12 then if 27 then 42 else "nope"
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (if_expression
+    condition: (integer_literal)
+    consequence: (if_expression
+      condition: (integer_literal)
+      consequence: (integer_literal)
+      alternative: (string_literal))))
