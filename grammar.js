@@ -6,6 +6,14 @@ function sepBy(sep, rule) {
   return optional(sepBy1(sep, rule))
 }
 
+const PREC = {
+  multiplicative: 5,
+  additive: 4,
+  comparative: 3,
+  and: 2,
+  or: 1,
+};
+
 module.exports = grammar({
   name: "tiger",
 
@@ -55,13 +63,13 @@ module.exports = grammar({
 
     binary_expression: ($) => {
       const table = [
-        [5, prec.left, choice("*", "/")],
-        [4, prec.left, choice("+", "-")],
+        [PREC.multiplicative, prec.left, choice("*", "/")],
+        [PREC.additive, prec.left, choice("+", "-")],
         // FIXME: comparisons should be non-associative
         // See https://github.com/tree-sitter/tree-sitter/issues/761
-        [3, prec.left, choice(">=", "<=", "=", "<>", "<", ">")],
-        [2, prec.left, "&"],
-        [1, prec.left, "|"],
+        [PREC.comparative, prec.left, choice(">=", "<=", "=", "<>", "<", ">")],
+        [PREC.and, prec.left, "&"],
+        [PREC.or, prec.left, "|"],
       ];
 
       return choice(
