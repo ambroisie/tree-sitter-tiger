@@ -62,6 +62,10 @@
           {
             "type": "unary_expression",
             "named": true
+          },
+          {
+            "type": "while_expression",
+            "named": true
           }
         ]
       },
@@ -123,6 +127,10 @@
           },
           {
             "type": "unary_expression",
+            "named": true
+          },
+          {
+            "type": "while_expression",
             "named": true
           }
         ]
@@ -220,6 +228,10 @@
           {
             "type": "unary_expression",
             "named": true
+          },
+          {
+            "type": "while_expression",
+            "named": true
           }
         ]
       }
@@ -306,6 +318,10 @@
           {
             "type": "unary_expression",
             "named": true
+          },
+          {
+            "type": "while_expression",
+            "named": true
           }
         ]
       }
@@ -373,6 +389,10 @@
           },
           {
             "type": "unary_expression",
+            "named": true
+          },
+          {
+            "type": "while_expression",
             "named": true
           }
         ]
@@ -446,6 +466,10 @@
           {
             "type": "unary_expression",
             "named": true
+          },
+          {
+            "type": "while_expression",
+            "named": true
           }
         ]
       }
@@ -517,6 +541,10 @@
           },
           {
             "type": "unary_expression",
+            "named": true
+          },
+          {
+            "type": "while_expression",
             "named": true
           }
         ]
@@ -596,6 +624,10 @@
           {
             "type": "unary_expression",
             "named": true
+          },
+          {
+            "type": "while_expression",
+            "named": true
           }
         ]
       },
@@ -658,6 +690,10 @@
           {
             "type": "unary_expression",
             "named": true
+          },
+          {
+            "type": "while_expression",
+            "named": true
           }
         ]
       },
@@ -719,6 +755,10 @@
           },
           {
             "type": "unary_expression",
+            "named": true
+          },
+          {
+            "type": "while_expression",
             "named": true
           }
         ]
@@ -797,6 +837,10 @@
           },
           {
             "type": "unary_expression",
+            "named": true
+          },
+          {
+            "type": "while_expression",
             "named": true
           }
         ]
@@ -910,6 +954,10 @@
         {
           "type": "unary_expression",
           "named": true
+        },
+        {
+          "type": "while_expression",
+          "named": true
         }
       ]
     }
@@ -976,6 +1024,10 @@
         },
         {
           "type": "unary_expression",
+          "named": true
+        },
+        {
+          "type": "while_expression",
           "named": true
         }
       ]
@@ -1059,6 +1111,10 @@
           {
             "type": "unary_expression",
             "named": true
+          },
+          {
+            "type": "while_expression",
+            "named": true
           }
         ]
       },
@@ -1068,6 +1124,144 @@
         "types": [
           {
             "type": "operator",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "while_expression",
+    "named": true,
+    "fields": {
+      "body": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "array_expression",
+            "named": true
+          },
+          {
+            "type": "array_value",
+            "named": true
+          },
+          {
+            "type": "assignment_expression",
+            "named": true
+          },
+          {
+            "type": "binary_expression",
+            "named": true
+          },
+          {
+            "type": "function_call",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "if_expression",
+            "named": true
+          },
+          {
+            "type": "integer_literal",
+            "named": true
+          },
+          {
+            "type": "nil_literal",
+            "named": true
+          },
+          {
+            "type": "record_expression",
+            "named": true
+          },
+          {
+            "type": "record_value",
+            "named": true
+          },
+          {
+            "type": "sequence_expression",
+            "named": true
+          },
+          {
+            "type": "string_literal",
+            "named": true
+          },
+          {
+            "type": "unary_expression",
+            "named": true
+          },
+          {
+            "type": "while_expression",
+            "named": true
+          }
+        ]
+      },
+      "condition": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "array_expression",
+            "named": true
+          },
+          {
+            "type": "array_value",
+            "named": true
+          },
+          {
+            "type": "assignment_expression",
+            "named": true
+          },
+          {
+            "type": "binary_expression",
+            "named": true
+          },
+          {
+            "type": "function_call",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "if_expression",
+            "named": true
+          },
+          {
+            "type": "integer_literal",
+            "named": true
+          },
+          {
+            "type": "nil_literal",
+            "named": true
+          },
+          {
+            "type": "record_expression",
+            "named": true
+          },
+          {
+            "type": "record_value",
+            "named": true
+          },
+          {
+            "type": "sequence_expression",
+            "named": true
+          },
+          {
+            "type": "string_literal",
+            "named": true
+          },
+          {
+            "type": "unary_expression",
+            "named": true
+          },
+          {
+            "type": "while_expression",
             "named": true
           }
         ]
@@ -1115,6 +1309,10 @@
     "named": false
   },
   {
+    "type": "do",
+    "named": false
+  },
+  {
     "type": "else",
     "named": false
   },
@@ -1148,6 +1346,10 @@
   },
   {
     "type": "then",
+    "named": false
+  },
+  {
+    "type": "while",
     "named": false
   },
   {

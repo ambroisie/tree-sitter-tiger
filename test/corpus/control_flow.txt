@@ -40,3 +40,16 @@ if 12 then if 27 then 42 else "nope"
       condition: (integer_literal)
       consequence: (integer_literal)
       alternative: (string_literal))))
+
+================================================================================
+While
+================================================================================
+
+while 12 do 27
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (while_expression
+    condition: (integer_literal)
+    body: (integer_literal)))
