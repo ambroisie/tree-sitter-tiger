@@ -244,9 +244,22 @@ module.exports = grammar({
 
     _type: ($) => choice(
       $.type_alias,
+      $.record_type,
     ),
 
     type_alias: ($) => $.identifier,
+
+    record_type: ($) => seq(
+      "{",
+      sepBy(",", $._typed_field),
+      "}",
+    ),
+
+    _typed_field: ($) => seq(
+      field("name", $.identifier),
+      ":",
+      field("type", $.identifier),
+    ),
 
     function_declaration: ($) => seq(
       "function",
@@ -269,12 +282,6 @@ module.exports = grammar({
       "(",
       field("parameters", sepBy(",", $._typed_field)),
       ")",
-    ),
-
-    _typed_field: ($) => seq(
-      field("name", $.identifier),
-      ":",
-      field("type", $.identifier),
     ),
 
     variable_declaration: ($) => seq(

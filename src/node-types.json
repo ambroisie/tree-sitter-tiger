@@ -1544,6 +1544,32 @@
     }
   },
   {
+    "type": "record_type",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "record_value",
     "named": true,
     "fields": {
@@ -1811,6 +1837,10 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "record_type",
+            "named": true
+          },
           {
             "type": "type_alias",
             "named": true
