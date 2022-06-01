@@ -50,6 +50,7 @@ module.exports = grammar({
 
       $.if_expression,
       $.while_expression,
+      $.for_expression,
     ),
 
     nil_literal: (_) => "nil",
@@ -189,6 +190,17 @@ module.exports = grammar({
     while_expression: ($) => seq(
       "while",
       field("condition", $._expr),
+      "do",
+      field("body", $._expr),
+    ),
+
+    for_expression: ($) => seq(
+      "for",
+      field("index", $.identifier),
+      ":=",
+      field("start", $._expr),
+      "to",
+      field("end", $._expr),
       "do",
       field("body", $._expr),
     ),
