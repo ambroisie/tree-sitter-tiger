@@ -283,6 +283,7 @@ module.exports = grammar({
     _function_declaration_common: ($) => seq(
       field("name", $.identifier),
       field("parameters", $.parameters),
+      optional(seq(":", field("return_type", $.identifier))),
     ),
 
     parameters: ($) => seq(

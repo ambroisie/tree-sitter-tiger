@@ -131,6 +131,25 @@ function func(a: int, b: int) = "string"
     body: (string_literal)))
 
 ================================================================================
+Function declaration return type
+================================================================================
+
+function func(a: int, b: int) : string = "string"
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (function_declaration
+    name: (identifier)
+    parameters: (parameters
+      name: (identifier)
+      type: (identifier)
+      name: (identifier)
+      type: (identifier))
+    return_type: (identifier)
+    body: (string_literal)))
+
+================================================================================
 Function declaration single parameter
 ================================================================================
 
@@ -172,6 +191,20 @@ primitive prim()
   (primitive_declaration
     name: (identifier)
     parameters: (parameters)))
+
+================================================================================
+Primitive declaration with return type
+================================================================================
+
+primitive prim() : int
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (primitive_declaration
+    name: (identifier)
+    parameters: (parameters)
+    return_type: (identifier)))
 
 ================================================================================
 Variable declaration
