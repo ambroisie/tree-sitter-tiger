@@ -139,3 +139,73 @@ Precedence
               left: (integer_literal)
               operator: (operator)
               right: (integer_literal))))))))
+
+================================================================================
+Parenthesis precedence
+================================================================================
+
+-(((((1 | 2) & 3) <= 4) + 5) * 6)
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (unary_expression
+    operator: (operator)
+    expression: (sequence_expression
+      (binary_expression
+        left: (sequence_expression
+          (binary_expression
+            left: (sequence_expression
+              (binary_expression
+                left: (sequence_expression
+                  (binary_expression
+                    left: (sequence_expression
+                      (binary_expression
+                        left: (integer_literal)
+                        operator: (operator)
+                        right: (integer_literal)))
+                    operator: (operator)
+                    right: (integer_literal)))
+                operator: (operator)
+                right: (integer_literal)))
+            operator: (operator)
+            right: (integer_literal)))
+        operator: (operator)
+        right: (integer_literal)))))
+
+================================================================================
+Sequence
+================================================================================
+
+(12; "27"; nil)
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (sequence_expression
+    (integer_literal)
+    (string_literal)
+    (nil_literal)))
+
+================================================================================
+Simple parenthesized expression
+================================================================================
+
+(42)
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (sequence_expression
+    (integer_literal)))
+
+================================================================================
+Empty sequence
+================================================================================
+
+()
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (sequence_expression))
