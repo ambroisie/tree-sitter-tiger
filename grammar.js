@@ -288,7 +288,7 @@ module.exports = grammar({
 
     parameters: ($) => seq(
       "(",
-      field("parameters", sepBy(",", $._typed_field)),
+      sepBy(",", $._typed_field),
       ")",
     ),
 
