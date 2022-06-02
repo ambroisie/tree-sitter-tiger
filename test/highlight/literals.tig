@@ -1,0 +1,6 @@
+nil
+/* <- constant.builtin */
+42
+/* <- number */
+"Hello World!"
+/* <- string */
