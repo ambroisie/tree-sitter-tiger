@@ -60,6 +60,13 @@
               nixpkgs-fmt = {
                 enable = true;
               };
+
+              tree-sitter-files = {
+                enable = true;
+                name = "tree-sitter generated files";
+                entry = "${pkgs.tree-sitter}/bin/tree-sitter generate";
+                pass_filenames = false;
+              };
             };
           };
         };
