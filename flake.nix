@@ -61,6 +61,13 @@
                 enable = true;
               };
 
+              tree-sitter = {
+                enable = true;
+                name = "tree-sitter tests";
+                entry = "${pkgs.tree-sitter}/bin/tree-sitter test";
+                pass_filenames = false;
+              };
+
               tree-sitter-files = {
                 enable = true;
                 name = "tree-sitter generated files";
