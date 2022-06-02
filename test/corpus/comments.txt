@@ -42,7 +42,6 @@ Comment with slashes
 (source_file
   (comment))
 
-
 ================================================================================
 Comment with asterisks
 ================================================================================
@@ -90,3 +89,42 @@ Comment end-delimiter only
   (ERROR
     (operator)
     (operator)))
+
+================================================================================
+Comment in real code
+================================================================================
+let
+    /* This is a comment */
+    var a := 12
+    /* This is an other comment */
+    var b := 27
+    /* Yet another comment */
+in
+    /* This is the final comment */
+    (a + b) <> 42
+    /* Sike! This is the *actual* final comment */
+end
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (let_expression
+    (comment)
+    (variable_declaration
+      (identifier)
+      (integer_literal))
+    (comment)
+    (variable_declaration
+      (identifier)
+      (integer_literal))
+    (comment)
+    (comment)
+    (binary_expression
+      (sequence_expression
+        (binary_expression
+          (identifier)
+          (operator)
+          (identifier)))
+      (operator)
+      (integer_literal))
+    (comment)))

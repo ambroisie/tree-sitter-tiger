@@ -29,6 +29,7 @@ static void skip_whitespace(TSLexer *lexer) {
         case '\n':
         case '\r':
             lexer->advance(lexer, true);
+            break;
         default:
             return;
         }
