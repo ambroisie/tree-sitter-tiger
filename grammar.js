@@ -25,10 +25,30 @@ module.exports = grammar({
     [$._lvalue, $.array_expression],
   ],
 
+  extras: ($) => [
+    /( |\n|\r|\t)+/,
+    $.comment,
+  ],
+
   rules: {
     source_file: ($) => choice(
       $._expr,
       optional($._declaration_chunks),
+    ),
+
+    comment: ($) => token(
+      seq(
+        "/*",
+        repeat(
+          choice(
+            // Match anything but the end-delimiter
+            /(\*[^/]|[^*])+/,
+            // Comments can be nested
+            // $.comment,
+          ),
+        ),
+        "*/",
+      ),
     ),
 
     // Expressions {{{

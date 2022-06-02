@@ -2284,6 +2284,10 @@
     "named": true
   },
   {
+    "type": "comment",
+    "named": true
+  },
+  {
     "type": "do",
     "named": false
   },
