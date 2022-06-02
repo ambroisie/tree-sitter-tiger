@@ -15,5 +15,15 @@
   },
   "scripts": {
     "test": "tree-sitter test"
-  }
+  },
+  "tree-sitter": [
+    {
+      "scope": "source.tiger",
+      "file-types": [
+        "tig",
+        "tih"
+      ],
+      "injection-regex": "tiger"
+    }
+  ]
 }
