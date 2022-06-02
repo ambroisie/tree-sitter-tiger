@@ -51,13 +51,7 @@ Nested comment
 --------------------------------------------------------------------------------
 
 (source_file
-  (comment)
-  (identifier)
-  (ERROR
-    (operator)
-    (operator)
-    (operator)
-    (operator)))
+  (comment))
 
 ================================================================================
 Unterminated comment

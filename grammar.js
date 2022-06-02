@@ -25,6 +25,11 @@ module.exports = grammar({
     [$._lvalue, $.array_expression],
   ],
 
+  externals: ($) => [
+    // Nested comments need to be tokenized externally
+    $.comment,
+  ],
+
   extras: ($) => [
     /( |\n|\r|\t)+/,
     $.comment,
@@ -34,21 +39,6 @@ module.exports = grammar({
     source_file: ($) => choice(
       $._expr,
       optional($._declaration_chunks),
-    ),
-
-    comment: ($) => token(
-      seq(
-        "/*",
-        repeat(
-          choice(
-            // Match anything but the end-delimiter
-            /(\*[^/]|[^*])+/,
-            // Comments can be nested
-            // $.comment,
-          ),
-        ),
-        "*/",
-      ),
     ),
 
     // Expressions {{{
