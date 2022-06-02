@@ -1,0 +1,41 @@
+let
+/* <- keyword */
+
+  var a := 12
+  /* <- keyword */
+
+  function f() : int = a
+  /* <- keyword */
+  primitive g()
+  /* <- keyword */
+
+  import "lib.tih"
+  /* <- keyword */
+
+  type array_of_int = array of int
+  /* <- keyword */
+  /*                  ^ keyword */
+  /*                        ^ keyword */
+
+in
+/* <- keyword */
+
+  12;
+
+  if 12 then 27 else 42;
+  /* <- keyword */
+  /*    ^ keyword */
+  /*            ^ keyword */
+
+  for i := 12 to 27 do 42;
+  /* <- keyword */
+  /*          ^ keyword */
+  /*                ^ keyword */
+
+  while 12 do break
+  /* <- keyword */
+  /*       ^ keyword */
+  /*          ^ keyword */
+
+end
+/* <- keyword */
