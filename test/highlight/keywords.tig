@@ -5,9 +5,9 @@ let
   /* <- keyword */
 
   function f() : int = a
-  /* <- keyword */
+  /* <- keyword.function */
   primitive g()
-  /* <- keyword */
+  /* <- keyword.function */
 
   import "lib.tih"
   /* <- keyword */

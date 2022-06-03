@@ -1,5 +1,10 @@
 ; Keywords {{{
 [
+ "function"
+ "primitive"
+] @keyword.function
+
+[
   "array"
   (break_expression)
   "do"
