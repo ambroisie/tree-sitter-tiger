@@ -51,9 +51,8 @@
       let
         pkgs = import nixpkgs {
           inherit system;
+          overlays = [ self.overlays.default ];
         };
-
-        version = (builtins.fromJSON (builtins.readFile ./package.json)).version;
       in
       rec {
         checks = {
@@ -104,14 +103,23 @@
         };
 
         packages = {
-          default =
-            let mkGrammar = pkgs.callPackage "${nixpkgs}/pkgs/development/tools/parsing/tree-sitter/grammar.nix" { };
-            in
-            mkGrammar {
-              language = "tiger";
-              inherit version;
-              source = ./.;
-            };
+          default = packages.tree-sitter-tiger;
+
+          inherit (pkgs.tree-sitter.passthru.builtGrammars) tree-sitter-tiger;
+
+          inherit (pkgs) tree-sitter;
         };
-      });
+      }) // {
+      overlays = {
+        default = final: prev: {
+          tree-sitter = prev.tree-sitter.override {
+            extraGrammars = {
+              tree-sitter-tiger = {
+                src = ./.;
+              };
+            };
+          };
+        };
+      };
+    };
 }
