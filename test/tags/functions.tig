@@ -1,0 +1,12 @@
+let
+  primitive print(s: string)
+  /*        ^ definition.function */
+
+  function func(a: int) : int = (print("Hello World!"); a)
+  /*       ^ definition.function */
+in
+  print("Hello World!\n");
+  /* <- reference.call */
+  func(42)
+  /* <- reference.call */
+end
