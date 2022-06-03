@@ -285,7 +285,7 @@ module.exports = grammar({
     array_type: ($) => seq(
       "array",
       "of",
-      field("element_type", $.identifier),
+      field("element_type", $._type_identifier),
     ),
 
     function_declaration: ($) => seq(

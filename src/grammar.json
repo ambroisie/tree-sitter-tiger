@@ -1234,7 +1234,7 @@
           "name": "element_type",
           "content": {
             "type": "SYMBOL",
-            "name": "identifier"
+            "name": "_type_identifier"
           }
         }
       ]

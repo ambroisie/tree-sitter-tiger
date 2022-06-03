@@ -895,6 +895,9 @@ static const TSSymbol ts_alias_sequences[PRODUCTION_ID_COUNT][MAX_ALIAS_SEQUENCE
     [0] = alias_sym_type_identifier,
     [2] = alias_sym_field_identifier,
   },
+  [28] = {
+    [2] = alias_sym_type_identifier,
+  },
   [32] = {
     [3] = alias_sym_type_identifier,
   },

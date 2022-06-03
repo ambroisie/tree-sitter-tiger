@@ -93,7 +93,7 @@ type array_of_int = array of int
   (type_declaration
     name: (identifier)
     value: (array_type
-      element_type: (identifier))))
+      element_type: (type_identifier))))
 
 ================================================================================
 Array type declaration non-associativity
@@ -108,7 +108,7 @@ type array_of_array_of_int = array of array of int
     (type_declaration
       name: (identifier)
       value: (array_type
-        element_type: (identifier)))
+        element_type: (type_identifier)))
     (identifier))
   (identifier))
 
