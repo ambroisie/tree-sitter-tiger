@@ -1,15 +1,15 @@
 type int = int
 /*   ^ variable */
-/*         ^ type */
+/*         ^ type.builtin */
 
 type int_array = array of int
-/*                        ^ type */
+/*                        ^ type.builtin */
 
 type record = {a: int, b: string}
 /*             ^ property */
-/*                ^ type */
+/*                ^ type.builtin */
 /*                     ^ property */
-/*                        ^ type */
+/*                        ^ type.builtin */
 
 var record := record {a = 12, b = "27"}
 /*  ^ variable */
@@ -23,7 +23,7 @@ var array := int_array[12] of 27;
 
 primitive func(a: int, b: string) : array
 /*             ^ variable.parameter */
-/*                ^ type */
+/*                ^ type.builtin */
 /*                     ^ variable.parameter */
-/*                        ^ type */
+/*                        ^ type.builtin */
 /*                                  ^ type */

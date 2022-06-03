@@ -3,6 +3,10 @@
   function: (identifier) @function.builtin)
   (#match? @function.builtin "^(chr|concat|exit|flush|getchar|not|ord|print|print_err|print_int|size|strcmp|streq|substring)$")
   (#is-not? local))
+
+((type_identifier) @type.builtin
+  (#match? @type.builtin "^(int|string)$")
+  (#is-not? local))
 ; }}}
 
 ; Keywords {{{
