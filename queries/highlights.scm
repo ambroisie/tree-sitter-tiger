@@ -5,6 +5,13 @@
 ] @keyword.function
 
 [
+  "do"
+  "for"
+  "to"
+  "while"
+] @keyword.repeat
+
+[
   "array"
   (break_expression)
   "do"
