@@ -9,7 +9,7 @@
 #define STATE_COUNT 148
 #define LARGE_STATE_COUNT 2
 #define SYMBOL_COUNT 87
-#define ALIAS_COUNT 1
+#define ALIAS_COUNT 2
 #define TOKEN_COUNT 49
 #define EXTERNAL_TOKEN_COUNT 1
 #define FIELD_COUNT 26
@@ -103,7 +103,8 @@ enum {
   aux_sym__declaration_chunk_repeat1 = 84,
   aux_sym__declaration_chunk_repeat2 = 85,
   aux_sym_record_type_repeat1 = 86,
-  alias_sym_type_identifier = 87,
+  alias_sym_field_identifier = 87,
+  alias_sym_type_identifier = 88,
 };
 
 static const char * const ts_symbol_names[] = {
@@ -194,6 +195,7 @@ static const char * const ts_symbol_names[] = {
   [aux_sym__declaration_chunk_repeat1] = "_declaration_chunk_repeat1",
   [aux_sym__declaration_chunk_repeat2] = "_declaration_chunk_repeat2",
   [aux_sym_record_type_repeat1] = "record_type_repeat1",
+  [alias_sym_field_identifier] = "field_identifier",
   [alias_sym_type_identifier] = "type_identifier",
 };
 
@@ -285,6 +287,7 @@ static const TSSymbol ts_symbol_map[] = {
   [aux_sym__declaration_chunk_repeat1] = aux_sym__declaration_chunk_repeat1,
   [aux_sym__declaration_chunk_repeat2] = aux_sym__declaration_chunk_repeat2,
   [aux_sym_record_type_repeat1] = aux_sym_record_type_repeat1,
+  [alias_sym_field_identifier] = alias_sym_field_identifier,
   [alias_sym_type_identifier] = alias_sym_type_identifier,
 };
 
@@ -637,6 +640,10 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
     .visible = false,
     .named = false,
   },
+  [alias_sym_field_identifier] = {
+    .visible = true,
+    .named = true,
+  },
   [alias_sym_type_identifier] = {
     .visible = true,
     .named = true,
@@ -872,6 +879,9 @@ static const TSSymbol ts_alias_sequences[PRODUCTION_ID_COUNT][MAX_ALIAS_SEQUENCE
   [7] = {
     [1] = anon_sym_DASH,
   },
+  [8] = {
+    [2] = alias_sym_field_identifier,
+  },
   [15] = {
     [0] = alias_sym_type_identifier,
   },
@@ -883,12 +893,17 @@ static const TSSymbol ts_alias_sequences[PRODUCTION_ID_COUNT][MAX_ALIAS_SEQUENCE
   },
   [25] = {
     [0] = alias_sym_type_identifier,
+    [2] = alias_sym_field_identifier,
   },
   [32] = {
     [3] = alias_sym_type_identifier,
   },
   [33] = {
     [0] = alias_sym_type_identifier,
+    [2] = alias_sym_field_identifier,
+  },
+  [36] = {
+    [1] = alias_sym_field_identifier,
   },
 };
 

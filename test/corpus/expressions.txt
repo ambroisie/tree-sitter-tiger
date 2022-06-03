@@ -40,9 +40,9 @@ record_type { a = 12, b = "27" }
 (source_file
   (record_expression
     type: (type_identifier)
-    field: (identifier)
+    field: (field_identifier)
     init: (integer_literal)
-    field: (identifier)
+    field: (field_identifier)
     init: (string_literal)))
 
 ================================================================================
@@ -56,7 +56,7 @@ record_type { a = 12 }
 (source_file
   (record_expression
     type: (type_identifier)
-    field: (identifier)
+    field: (field_identifier)
     init: (integer_literal)))
 
 ================================================================================
@@ -82,7 +82,7 @@ record_type { a = 12, }
 (source_file
   (record_expression
     type: (type_identifier)
-    field: (identifier)
+    field: (field_identifier)
     init: (integer_literal)
     (ERROR)))
 
@@ -156,4 +156,4 @@ a := array[12] := record.field
         index: (integer_literal))
       right: (record_value
         record: (identifier)
-        field: (identifier)))))
+        field: (field_identifier)))))

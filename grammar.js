@@ -23,6 +23,7 @@ module.exports = grammar({
 
   inline: ($) => [
     $._type_identifier,
+    $._field_identifier,
   ],
 
   conflicts: ($) => [
@@ -88,6 +89,8 @@ module.exports = grammar({
 
     _type_identifier: ($) => alias($.identifier, $.type_identifier),
 
+    _field_identifier: ($) => alias($.identifier, $.field_identifier),
+
     escape_sequence: (_) => token.immediate(
       seq(
         "\\",
@@ -113,7 +116,7 @@ module.exports = grammar({
     record_value: ($) => seq(
       field("record", $._lvalue),
       ".",
-      field("field", $.identifier),
+      field("field", $._field_identifier),
     ),
 
     array_value: ($) => seq(
@@ -177,7 +180,7 @@ module.exports = grammar({
       sepBy(
         ",",
         seq(
-          field("field", $.identifier),
+          field("field", $._field_identifier),
           "=",
           field("init", $._expr),
         ),

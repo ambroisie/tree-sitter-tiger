@@ -1466,7 +1466,7 @@
         "required": false,
         "types": [
           {
-            "type": "identifier",
+            "type": "field_identifier",
             "named": true
           }
         ]
@@ -1596,7 +1596,7 @@
         "required": true,
         "types": [
           {
-            "type": "identifier",
+            "type": "field_identifier",
             "named": true
           }
         ]
@@ -2301,6 +2301,10 @@
   },
   {
     "type": "escape_sequence",
+    "named": true
+  },
+  {
+    "type": "field_identifier",
     "named": true
   },
   {

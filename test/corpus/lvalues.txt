@@ -33,4 +33,4 @@ a_record.field
 (source_file
   (record_value
     record: (identifier)
-    field: (identifier)))
+    field: (field_identifier)))

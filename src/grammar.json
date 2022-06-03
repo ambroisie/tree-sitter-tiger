@@ -142,6 +142,15 @@
       "named": true,
       "value": "type_identifier"
     },
+    "_field_identifier": {
+      "type": "ALIAS",
+      "content": {
+        "type": "SYMBOL",
+        "name": "identifier"
+      },
+      "named": true,
+      "value": "field_identifier"
+    },
     "escape_sequence": {
       "type": "IMMEDIATE_TOKEN",
       "content": {
@@ -259,7 +268,7 @@
           "name": "field",
           "content": {
             "type": "SYMBOL",
-            "name": "identifier"
+            "name": "_field_identifier"
           }
         }
       ]
@@ -731,7 +740,7 @@
                       "name": "field",
                       "content": {
                         "type": "SYMBOL",
-                        "name": "identifier"
+                        "name": "_field_identifier"
                       }
                     },
                     {
@@ -765,7 +774,7 @@
                             "name": "field",
                             "content": {
                               "type": "SYMBOL",
-                              "name": "identifier"
+                              "name": "_field_identifier"
                             }
                           },
                           {
@@ -1460,7 +1469,8 @@
     }
   ],
   "inline": [
-    "_type_identifier"
+    "_type_identifier",
+    "_field_identifier"
   ],
   "supertypes": []
 }
