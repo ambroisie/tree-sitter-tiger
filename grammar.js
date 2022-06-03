@@ -193,7 +193,7 @@ module.exports = grammar({
       PREC.assign,
       seq(
         field("left", $._lvalue),
-        ":=",
+        alias(":=", $.operator),
         field("right", $._expr),
       ),
     ),
@@ -223,7 +223,7 @@ module.exports = grammar({
     for_expression: ($) => seq(
       "for",
       field("index", $.identifier),
-      ":=",
+      alias(":=", $.operator),
       field("start", $._expr),
       "to",
       field("end", $._expr),
@@ -325,7 +325,7 @@ module.exports = grammar({
       "var",
       field("name", $.identifier),
       optional(seq(":", field("type", $._type_identifier))),
-      ":=",
+      alias(":=", $.operator),
       field("value", $._expr),
     ),
 

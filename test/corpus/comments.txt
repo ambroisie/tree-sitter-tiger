@@ -112,10 +112,12 @@ end
     (comment)
     (variable_declaration
       (identifier)
+      (operator)
       (integer_literal))
     (comment)
     (variable_declaration
       (identifier)
+      (operator)
       (integer_literal))
     (comment)
     (comment)

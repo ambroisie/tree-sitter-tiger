@@ -150,10 +150,12 @@ a := array[12] := record.field
 (source_file
   (assignment_expression
     left: (identifier)
+    (operator)
     right: (assignment_expression
       left: (array_value
         array: (identifier)
         index: (integer_literal))
+      (operator)
       right: (record_value
         record: (identifier)
         field: (field_identifier)))))

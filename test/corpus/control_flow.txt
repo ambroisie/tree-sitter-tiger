@@ -65,6 +65,7 @@ for i := 12 to nil do "42"
 (source_file
   (for_expression
     index: (identifier)
+    (operator)
     start: (integer_literal)
     end: (nil_literal)
     body: (string_literal)))
@@ -134,6 +135,7 @@ for i := break to break do while break do break
 (source_file
   (for_expression
     (identifier)
+    (operator)
     (break_expression)
     (break_expression)
     (while_expression

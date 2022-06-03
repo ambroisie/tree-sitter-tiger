@@ -136,7 +136,7 @@ static const char * const ts_symbol_names[] = {
   [anon_sym_of] = "of",
   [anon_sym_LBRACE] = "{",
   [anon_sym_RBRACE] = "}",
-  [anon_sym_COLON_EQ] = ":=",
+  [anon_sym_COLON_EQ] = "operator",
   [anon_sym_if] = "if",
   [anon_sym_then] = "then",
   [anon_sym_else] = "else",
@@ -227,7 +227,7 @@ static const TSSymbol ts_symbol_map[] = {
   [anon_sym_of] = anon_sym_of,
   [anon_sym_LBRACE] = anon_sym_LBRACE,
   [anon_sym_RBRACE] = anon_sym_RBRACE,
-  [anon_sym_COLON_EQ] = anon_sym_COLON_EQ,
+  [anon_sym_COLON_EQ] = anon_sym_DASH,
   [anon_sym_if] = anon_sym_if,
   [anon_sym_then] = anon_sym_then,
   [anon_sym_else] = anon_sym_else,
@@ -407,7 +407,7 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
   },
   [anon_sym_COLON_EQ] = {
     .visible = true,
-    .named = false,
+    .named = true,
   },
   [anon_sym_if] = {
     .visible = true,

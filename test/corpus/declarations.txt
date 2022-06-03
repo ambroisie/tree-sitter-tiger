@@ -217,6 +217,7 @@ var a := 12
 (source_file
   (variable_declaration
     name: (identifier)
+    (operator)
     value: (integer_literal)))
 
 ================================================================================
@@ -231,6 +232,7 @@ var a : int := 27
   (variable_declaration
     name: (identifier)
     type: (type_identifier)
+    (operator)
     value: (integer_literal)))
 
 ================================================================================
@@ -245,9 +247,11 @@ var b := 27
 (source_file
   (variable_declaration
     name: (identifier)
+    (operator)
     value: (integer_literal))
   (variable_declaration
     name: (identifier)
+    (operator)
     value: (integer_literal)))
 
 ================================================================================
