@@ -1,3 +1,10 @@
+; Built-ins {{{
+((function_call
+  function: (identifier) @function.builtin)
+  (#match? @function.builtin "^(chr|concat|exit|flush|getchar|not|ord|print|print_err|print_int|size|strcmp|streq|substring)$")
+  (#is-not? local))
+; }}}
+
 ; Keywords {{{
 [
  "function"

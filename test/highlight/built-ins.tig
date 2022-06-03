@@ -1,0 +1,19 @@
+let
+  var a := exit(0)
+  /*       ^ function.builtin */
+
+  primitive exit(ret: int) /* Shadowing the prelude-included built-in */
+
+  var b := exit(0)
+  /*       ^ function */
+
+in
+  exit(1);
+  /* <- function */
+
+  print("shadowing is fun");
+  /* <- function.builtin */
+
+  b := print
+  /*   ^ variable */
+end
