@@ -34,7 +34,19 @@
     , nixpkgs
     , pre-commit-hooks
     }:
-    flake-utils.lib.eachDefaultSystem
+    let
+      inherit (flake-utils.lib) eachSystem system;
+
+      mySystems = [
+        system.aarch64-darwin
+        system.aarch64-linux
+        system.x86_64-darwin
+        system.x86_64-linux
+      ];
+
+      eachMySystem = eachSystem mySystems;
+    in
+    eachMySystem
       (system:
       let
         pkgs = import nixpkgs {
