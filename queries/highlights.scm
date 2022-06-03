@@ -1,11 +1,3 @@
-; Misc {{{
-(comment) @comment
-
-(type_identifier) @type
-(field_identifier) @property
-(identifier) @variable
-; }}}
-
 ; Keywords {{{
 [
   "array"
@@ -54,6 +46,14 @@
  "{"
  "}"
 ] @punctuation.bracket
+; }}}
+
+; Misc {{{
+(comment) @comment
+
+(type_identifier) @type
+(field_identifier) @property
+(identifier) @variable
 ; }}}
 
 ; vim: sw=2 foldmethod=marker
