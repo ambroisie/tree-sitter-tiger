@@ -115,7 +115,7 @@
           default = pkgs.mkShell {
             nativeBuildInputs = with pkgs; [
               nodejs
-              tree-sitter
+              (tree-sitter.override { webUISupport = true; })
             ];
 
             inherit (checks.pre-commit) shellHook;
