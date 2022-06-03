@@ -24,6 +24,7 @@ module.exports = grammar({
   inline: ($) => [
     $._type_identifier,
     $._field_identifier,
+    $._function_declaration_common,
   ],
 
   conflicts: ($) => [
