@@ -29,4 +29,23 @@
 (string_literal) @string
 ; }}}
 
+; Operators {{{
+(operator) @operator
+
+[
+ ","
+ ";"
+ "."
+] @punctuation.delimiter
+
+[
+ "("
+ ")"
+ "["
+ "]"
+ "{"
+ "}"
+] @punctuation.bracket
+; }}}
+
 ; vim: sw=2 foldmethod=marker
