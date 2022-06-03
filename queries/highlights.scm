@@ -33,13 +33,6 @@
 ] @keyword
 ; }}}
 
-; Literals {{{
-(nil_literal) @constant.builtin
-(integer_literal) @number
-(string_literal) @string
-(escape_sequence) @string.escape
-; }}}
-
 ; Operators {{{
 (operator) @operator
 
@@ -70,6 +63,13 @@
 
 (parameters
   name: (identifier) @variable.parameter)
+; }}}
+
+; Literals {{{
+(nil_literal) @constant.builtin
+(integer_literal) @number
+(string_literal) @string
+(escape_sequence) @string.escape
 ; }}}
 
 ; Misc {{{
