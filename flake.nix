@@ -40,6 +40,8 @@
         pkgs = import nixpkgs {
           inherit system;
         };
+
+        version = (builtins.fromJSON (builtins.readFile ./package.json)).version;
       in
       rec {
         checks = {
@@ -87,6 +89,17 @@
 
             inherit (checks.pre-commit) shellHook;
           };
+        };
+
+        packages = {
+          default =
+            let mkGrammar = pkgs.callPackage "${nixpkgs}/pkgs/development/tools/parsing/tree-sitter/grammar.nix" { };
+            in
+            mkGrammar {
+              language = "tiger";
+              inherit version;
+              source = ./.;
+            };
         };
       });
 }
