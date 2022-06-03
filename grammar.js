@@ -272,14 +272,15 @@ module.exports = grammar({
 
     record_type: ($) => seq(
       "{",
-      sepBy(",", $._typed_field),
+      sepBy(
+        ",",
+        seq(
+          field("name", $._field_identifier),
+          ":",
+          field("type", $._type_identifier),
+        ),
+      ),
       "}",
-    ),
-
-    _typed_field: ($) => seq(
-      field("name", $.identifier),
-      ":",
-      field("type", $.identifier),
     ),
 
     array_type: ($) => seq(
@@ -308,7 +309,14 @@ module.exports = grammar({
 
     parameters: ($) => seq(
       "(",
-      sepBy(",", $._typed_field),
+      sepBy(
+        ",",
+        seq(
+          field("name", $.identifier),
+          ":",
+          field("type", $._type_identifier),
+        ),
+      ),
       ")",
     ),
 

@@ -32,10 +32,10 @@ type record = { a: int, b: str }
   (type_declaration
     name: (identifier)
     value: (record_type
-      name: (identifier)
-      type: (identifier)
-      name: (identifier)
-      type: (identifier))))
+      name: (field_identifier)
+      type: (type_identifier)
+      name: (field_identifier)
+      type: (type_identifier))))
 
 ================================================================================
 Record type declaration single field
@@ -49,8 +49,8 @@ type record = { a: int }
   (type_declaration
     name: (identifier)
     value: (record_type
-      name: (identifier)
-      type: (identifier))))
+      name: (field_identifier)
+      type: (type_identifier))))
 
 ================================================================================
 Record type declaration no fields
@@ -77,8 +77,8 @@ type record = { a: int, }
   (type_declaration
     name: (identifier)
     value: (record_type
-      name: (identifier)
-      type: (identifier)
+      name: (field_identifier)
+      type: (type_identifier)
       (ERROR))))
 
 ================================================================================
@@ -125,9 +125,9 @@ function func(a: int, b: int) = "string"
     name: (identifier)
     parameters: (parameters
       name: (identifier)
-      type: (identifier)
+      type: (type_identifier)
       name: (identifier)
-      type: (identifier))
+      type: (type_identifier))
     body: (string_literal)))
 
 ================================================================================
@@ -143,9 +143,9 @@ function func(a: int, b: int) : string = "string"
     name: (identifier)
     parameters: (parameters
       name: (identifier)
-      type: (identifier)
+      type: (type_identifier)
       name: (identifier)
-      type: (identifier))
+      type: (type_identifier))
     return_type: (type_identifier)
     body: (string_literal)))
 
@@ -162,7 +162,7 @@ function func(a: int) = "string"
     name: (identifier)
     parameters: (parameters
       name: (identifier)
-      type: (identifier))
+      type: (type_identifier))
     body: (string_literal)))
 
 ================================================================================
