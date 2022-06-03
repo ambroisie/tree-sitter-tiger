@@ -21,8 +21,13 @@ module.exports = grammar({
   // Ensure we don't extract keywords from tokens
   word: ($) => $.identifier,
 
+  inline: ($) => [
+    $._type_identifier,
+  ],
+
   conflicts: ($) => [
     [$._lvalue, $.array_expression],
+    [$._lvalue, $._type_identifier],
   ],
 
   externals: ($) => [
@@ -80,6 +85,8 @@ module.exports = grammar({
 
     // NOTE: includes reserved identifiers
     identifier: (_) => /[_a-zA-Z0-9]+/,
+
+    _type_identifier: ($) => alias($.identifier, $.type_identifier),
 
     escape_sequence: (_) => token.immediate(
       seq(
@@ -156,7 +163,7 @@ module.exports = grammar({
     sequence_expression: ($) => seq("(", sepBy(";", $._expr), ")"),
 
     array_expression: ($) => seq(
-      field("type", $.identifier),
+      field("type", $._type_identifier),
       "[",
       field("size", $._expr),
       "]",
@@ -165,7 +172,7 @@ module.exports = grammar({
     ),
 
     record_expression: ($) => seq(
-      field("type", $.identifier),
+      field("type", $._type_identifier),
       "{",
       sepBy(
         ",",
@@ -258,7 +265,7 @@ module.exports = grammar({
       $.array_type,
     ),
 
-    type_alias: ($) => $.identifier,
+    type_alias: ($) => $._type_identifier,
 
     record_type: ($) => seq(
       "{",
@@ -293,7 +300,7 @@ module.exports = grammar({
     _function_declaration_common: ($) => seq(
       field("name", $.identifier),
       field("parameters", $.parameters),
-      optional(seq(":", field("return_type", $.identifier))),
+      optional(seq(":", field("return_type", $._type_identifier))),
     ),
 
     parameters: ($) => seq(
@@ -305,7 +312,7 @@ module.exports = grammar({
     variable_declaration: ($) => seq(
       "var",
       field("name", $.identifier),
-      optional(seq(":", field("type", $.identifier))),
+      optional(seq(":", field("type", $._type_identifier))),
       ":=",
       field("value", $._expr),
     ),

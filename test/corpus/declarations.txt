@@ -18,7 +18,7 @@ type alias = int
   (type_declaration
     name: (identifier)
     value: (type_alias
-      (identifier))))
+      (type_identifier))))
 
 ================================================================================
 Record type declaration
@@ -146,7 +146,7 @@ function func(a: int, b: int) : string = "string"
       type: (identifier)
       name: (identifier)
       type: (identifier))
-    return_type: (identifier)
+    return_type: (type_identifier)
     body: (string_literal)))
 
 ================================================================================
@@ -204,7 +204,7 @@ primitive prim() : int
   (primitive_declaration
     name: (identifier)
     parameters: (parameters)
-    return_type: (identifier)))
+    return_type: (type_identifier)))
 
 ================================================================================
 Variable declaration
@@ -230,7 +230,7 @@ var a : int := 27
 (source_file
   (variable_declaration
     name: (identifier)
-    type: (identifier)
+    type: (type_identifier)
     value: (integer_literal)))
 
 ================================================================================

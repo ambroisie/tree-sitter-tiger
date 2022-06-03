@@ -8,7 +8,7 @@ array_of_int[42] of 0
 
 (source_file
   (array_expression
-    type: (identifier)
+    type: (type_identifier)
     size: (integer_literal)
     init: (integer_literal)))
 
@@ -22,10 +22,10 @@ array_of_array_of_int[12] of array_of_int[27] of 0
 
 (source_file
   (array_expression
-    type: (identifier)
+    type: (type_identifier)
     size: (integer_literal)
     init: (array_expression
-      type: (identifier)
+      type: (type_identifier)
       size: (integer_literal)
       init: (integer_literal))))
 
@@ -39,7 +39,7 @@ record_type { a = 12, b = "27" }
 
 (source_file
   (record_expression
-    type: (identifier)
+    type: (type_identifier)
     field: (identifier)
     init: (integer_literal)
     field: (identifier)
@@ -55,7 +55,7 @@ record_type { a = 12 }
 
 (source_file
   (record_expression
-    type: (identifier)
+    type: (type_identifier)
     field: (identifier)
     init: (integer_literal)))
 
@@ -69,7 +69,7 @@ record_type {}
 
 (source_file
   (record_expression
-    type: (identifier)))
+    type: (type_identifier)))
 
 ================================================================================
 Record expression trailing comma
@@ -81,7 +81,7 @@ record_type { a = 12, }
 
 (source_file
   (record_expression
-    type: (identifier)
+    type: (type_identifier)
     field: (identifier)
     init: (integer_literal)
     (ERROR)))

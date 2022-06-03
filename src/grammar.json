@@ -133,6 +133,15 @@
       "type": "PATTERN",
       "value": "[_a-zA-Z0-9]+"
     },
+    "_type_identifier": {
+      "type": "ALIAS",
+      "content": {
+        "type": "SYMBOL",
+        "name": "identifier"
+      },
+      "named": true,
+      "value": "type_identifier"
+    },
     "escape_sequence": {
       "type": "IMMEDIATE_TOKEN",
       "content": {
@@ -660,7 +669,7 @@
           "name": "type",
           "content": {
             "type": "SYMBOL",
-            "name": "identifier"
+            "name": "_type_identifier"
           }
         },
         {
@@ -701,7 +710,7 @@
           "name": "type",
           "content": {
             "type": "SYMBOL",
-            "name": "identifier"
+            "name": "_type_identifier"
           }
         },
         {
@@ -1127,7 +1136,7 @@
     },
     "type_alias": {
       "type": "SYMBOL",
-      "name": "identifier"
+      "name": "_type_identifier"
     },
     "record_type": {
       "type": "SEQ",
@@ -1293,7 +1302,7 @@
                   "name": "return_type",
                   "content": {
                     "type": "SYMBOL",
-                    "name": "identifier"
+                    "name": "_type_identifier"
                   }
                 }
               ]
@@ -1381,7 +1390,7 @@
                   "name": "type",
                   "content": {
                     "type": "SYMBOL",
-                    "name": "identifier"
+                    "name": "_type_identifier"
                   }
                 }
               ]
@@ -1437,6 +1446,10 @@
     [
       "_lvalue",
       "array_expression"
+    ],
+    [
+      "_lvalue",
+      "_type_identifier"
     ]
   ],
   "precedences": [],
@@ -1446,7 +1459,9 @@
       "name": "comment"
     }
   ],
-  "inline": [],
+  "inline": [
+    "_type_identifier"
+  ],
   "supertypes": []
 }
 
