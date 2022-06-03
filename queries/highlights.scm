@@ -65,6 +65,11 @@
   name: (identifier) @variable.parameter)
 ; }}}
 
+; Declarations {{{
+(import_declaration
+  file: (string_literal) @string.special.path)
+; }}}
+
 ; Literals {{{
 (nil_literal) @constant.builtin
 (integer_literal) @number
