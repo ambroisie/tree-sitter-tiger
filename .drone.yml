@@ -1,0 +1,31 @@
+---
+kind: pipeline
+type: exec
+name: abacus checks
+
+steps:
+- name: flake check
+  commands:
+  - nix flake check
+
+- name: package check
+  commands:
+  - nix build
+
+- name: notifiy
+  commands:
+  - nix run github:ambroisie/matrix-notifier
+  environment:
+    ADDRESS:
+      from_secret: matrix_homeserver
+    ROOM:
+      from_secret: matrix_roomid
+    USER:
+      from_secret: matrix_username
+    PASS:
+      from_secret: matrix_password
+  when:
+    status:
+      - failure
+      - success
+...
