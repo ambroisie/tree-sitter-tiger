@@ -48,6 +48,18 @@
 ] @punctuation.bracket
 ; }}}
 
+; Functions {{{
+(function_call
+  function: (identifier) @function)
+(function_declaration
+  name: (identifier) @function)
+(primitive_declaration
+  name: (identifier) @function)
+
+(parameters
+  name: (identifier) @variable.parameter)
+; }}}
+
 ; Misc {{{
 (comment) @comment
 
