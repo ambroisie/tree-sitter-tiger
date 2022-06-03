@@ -1,5 +1,9 @@
 ; Misc {{{
 (comment) @comment
+
+(type_identifier) @type
+(field_identifier) @property
+(identifier) @variable
 ; }}}
 
 ; Keywords {{{
