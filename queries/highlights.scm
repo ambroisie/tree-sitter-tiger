@@ -33,6 +33,7 @@
 (nil_literal) @constant.builtin
 (integer_literal) @number
 (string_literal) @string
+(escape_sequence) @string.escape
 ; }}}
 
 ; Operators {{{

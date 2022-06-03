@@ -2,5 +2,7 @@ nil
 /* <- constant.builtin */
 42
 /* <- number */
-"Hello World!"
-/* <- string */
+"Hello World!\n"
+/* <- string
+             ^ string.escape
+*/
