@@ -1,3 +1,6 @@
 # Nix files
 /result
 /.pre-commit-config.yaml
+
+# Tree-sitter artifact
+/tree-sitter-tiger.wasm
