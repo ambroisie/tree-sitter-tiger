@@ -53,6 +53,26 @@
           inherit system;
           overlays = [ self.overlays.default ];
         };
+
+        tree-sitter-env = pkgs.stdenv.mkDerivation {
+          name = "tree-sitter-env";
+
+          nativeBuildInputs = with pkgs; [
+            makeWrapper
+          ];
+
+          dontUnpack = true;
+
+          dontBuild = true;
+
+          installPhase = ''
+            mkdir -p $out/bin
+            makeWrapper \
+              ${pkgs.tree-sitter}/bin/tree-sitter \
+              $out/bin/tree-sitter \
+              --prefix PATH : "${with pkgs; lib.makeBinPath [stdenv.cc nodejs]}"
+          '';
+        };
       in
       rec {
         checks = {
@@ -77,14 +97,14 @@
               tree-sitter = {
                 enable = true;
                 name = "tree-sitter tests";
-                entry = "${pkgs.tree-sitter}/bin/tree-sitter test";
+                entry = "${tree-sitter-env}/bin/tree-sitter test";
                 pass_filenames = false;
               };
 
               tree-sitter-files = {
                 enable = true;
                 name = "tree-sitter generated files";
-                entry = "${pkgs.tree-sitter}/bin/tree-sitter generate";
+                entry = "${tree-sitter-env}/bin/tree-sitter generate";
                 pass_filenames = false;
               };
             };
