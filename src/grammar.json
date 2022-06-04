@@ -89,6 +89,14 @@
         {
           "type": "SYMBOL",
           "name": "let_expression"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "meta_cast"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "meta_expression"
         }
       ]
     },
@@ -134,13 +142,22 @@
       "value": "[_a-zA-Z0-9]+"
     },
     "_type_identifier": {
-      "type": "ALIAS",
-      "content": {
-        "type": "SYMBOL",
-        "name": "identifier"
-      },
-      "named": true,
-      "value": "type_identifier"
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "ALIAS",
+          "content": {
+            "type": "SYMBOL",
+            "name": "identifier"
+          },
+          "named": true,
+          "value": "type_identifier"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "meta_type_identifier"
+        }
+      ]
     },
     "_field_identifier": {
       "type": "ALIAS",
@@ -245,6 +262,10 @@
         {
           "type": "SYMBOL",
           "name": "array_value"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "meta_lvalue"
         }
       ]
     },
@@ -1063,8 +1084,17 @@
     "_declaration_chunks": {
       "type": "REPEAT1",
       "content": {
-        "type": "SYMBOL",
-        "name": "_declaration_chunk"
+        "type": "CHOICE",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "meta_chunks"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "_declaration_chunk"
+          }
+        ]
       }
     },
     "_declaration_chunk": {
@@ -1513,6 +1543,139 @@
           }
         }
       ]
+    },
+    "meta_chunks": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "_chunks"
+        },
+        {
+          "type": "STRING",
+          "value": "("
+        },
+        {
+          "type": "FIELD",
+          "name": "index",
+          "content": {
+            "type": "SYMBOL",
+            "name": "integer_literal"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": ")"
+        }
+      ]
+    },
+    "meta_cast": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "_cast"
+        },
+        {
+          "type": "STRING",
+          "value": "("
+        },
+        {
+          "type": "FIELD",
+          "name": "expression",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_expr"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": ","
+        },
+        {
+          "type": "FIELD",
+          "name": "type",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_type"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": ")"
+        }
+      ]
+    },
+    "meta_expression": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "_exp"
+        },
+        {
+          "type": "STRING",
+          "value": "("
+        },
+        {
+          "type": "FIELD",
+          "name": "index",
+          "content": {
+            "type": "SYMBOL",
+            "name": "integer_literal"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": ")"
+        }
+      ]
+    },
+    "meta_lvalue": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "_lvalue"
+        },
+        {
+          "type": "STRING",
+          "value": "("
+        },
+        {
+          "type": "FIELD",
+          "name": "index",
+          "content": {
+            "type": "SYMBOL",
+            "name": "integer_literal"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": ")"
+        }
+      ]
+    },
+    "meta_type_identifier": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "_namety"
+        },
+        {
+          "type": "STRING",
+          "value": "("
+        },
+        {
+          "type": "SYMBOL",
+          "name": "integer_literal"
+        },
+        {
+          "type": "STRING",
+          "value": ")"
+        }
+      ]
     }
   },
   "extras": [
@@ -1529,6 +1692,10 @@
     [
       "_lvalue",
       "array_expression"
+    ],
+    [
+      "_lvalue",
+      "record_expression"
     ],
     [
       "_lvalue",

@@ -29,6 +29,7 @@ module.exports = grammar({
 
   conflicts: ($) => [
     [$._lvalue, $.array_expression],
+    [$._lvalue, $.record_expression],
     [$._lvalue, $._type_identifier],
   ],
 
@@ -73,6 +74,9 @@ module.exports = grammar({
       $.for_expression,
       $.break_expression,
       $.let_expression,
+
+      $.meta_cast,
+      $.meta_expression,
     ),
 
     nil_literal: (_) => "nil",
@@ -88,7 +92,10 @@ module.exports = grammar({
     // NOTE: includes reserved identifiers
     identifier: (_) => /[_a-zA-Z0-9]+/,
 
-    _type_identifier: ($) => alias($.identifier, $.type_identifier),
+    _type_identifier: ($) => choice(
+      alias($.identifier, $.type_identifier),
+      $.meta_type_identifier,
+    ),
 
     _field_identifier: ($) => alias($.identifier, $.field_identifier),
 
@@ -112,6 +119,7 @@ module.exports = grammar({
       $.identifier,
       $.record_value,
       $.array_value,
+      $.meta_lvalue,
     ),
 
     record_value: ($) => seq(
@@ -245,7 +253,12 @@ module.exports = grammar({
 
     // Declarations {{{
 
-    _declaration_chunks: ($) => repeat1($._declaration_chunk),
+    _declaration_chunks: ($) => repeat1(
+      choice(
+        $.meta_chunks,
+        $._declaration_chunk,
+      ),
+    ),
 
     _declaration_chunk: ($) => prec.left(
       choice(
@@ -332,6 +345,47 @@ module.exports = grammar({
     import_declaration: ($) => seq(
       "import",
       field("file", $.string_literal),
+    ),
+
+    // }}}
+
+    // Meta-variables {{{
+
+    meta_chunks: ($) => seq(
+      "_chunks",
+      "(",
+      field("index", $.integer_literal),
+      ")",
+    ),
+
+    meta_cast: ($) => seq(
+      "_cast",
+      "(",
+      field("expression", $._expr),
+      ",",
+      field("type", $._type),
+      ")",
+    ),
+
+    meta_expression: ($) => seq(
+      "_exp",
+      "(",
+      field("index", $.integer_literal),
+      ")",
+    ),
+
+    meta_lvalue: ($) => seq(
+      "_lvalue",
+      "(",
+      field("index", $.integer_literal),
+      ")",
+    ),
+
+    meta_type_identifier: ($) => seq(
+      "_namety",
+      "(",
+      $.integer_literal,
+      ")",
     ),
 
     // }}}
