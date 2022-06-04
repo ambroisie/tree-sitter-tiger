@@ -1,0 +1,9 @@
+class A {}
+/*    ^ definition.class */
+
+type B = class extends A {}
+/*   ^ definition.class */
+/*                     ^ reference.class */
+
+var object := new B
+/*                ^ reference.class */
