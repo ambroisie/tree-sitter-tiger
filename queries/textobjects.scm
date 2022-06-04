@@ -9,6 +9,12 @@
   arguments: ((_) @call.inner)*) @call.outer
 ; }}}
 
+; Control flow {{{
+(if_expression
+  consequence: (_) @conditional.inner
+  alternative: (_)? @conditional.inner) @conditional.outer
+; }}}
+
 ; Misc {{{
 (comment) @comment.outer
 ; }}}
