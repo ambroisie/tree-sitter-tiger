@@ -27,6 +27,10 @@
 ] @keyword.constructor
 
 [
+ "method"
+] @keyword.method
+
+[
   "array"
   (break_expression)
   "do"
