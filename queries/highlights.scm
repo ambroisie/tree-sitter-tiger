@@ -23,6 +23,10 @@
 ] @keyword.repeat
 
 [
+ "new"
+] @keyword.constructor
+
+[
   "array"
   (break_expression)
   "do"

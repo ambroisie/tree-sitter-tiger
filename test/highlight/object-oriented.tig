@@ -18,7 +18,7 @@ let
   }
 
   var object := new B
-  /*            ^ keyword */
+  /*            ^ keyword.constructor */
 in
   object.a := 27;
   /*     ^ property */
