@@ -8,6 +8,10 @@
   (let_expression)
   (function_declaration)
   (primitive_declaration)
+
+  (class_declaration)
+  (class_type)
+  (method_declaration)
 ] @fold
 
 [
