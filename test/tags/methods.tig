@@ -1,0 +1,11 @@
+let
+  class A {
+    method meth() = ()
+    /*     ^ definition.method */
+  }
+
+  object := new A
+in
+  object.meth()
+  /*     ^ reference.call */
+end
