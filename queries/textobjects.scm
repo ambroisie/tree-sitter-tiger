@@ -1,11 +1,18 @@
-; Functions {{{
+; Functions and methods {{{
  (function_declaration
    parameters: ((_) @parameter.inner)* @parameter.outer
    body: (_) @function.inner) @function.outer
  (primitive_declaration
    parameters: ((_) @parameter.inner)* @parameter.outer) @function.outer
 
+ (method_declaration
+   parameters: ((_) @parameter.inner)* @parameter.outer
+   body: (_) @function.inner) @function.outer
+
 (function_call
+  arguments: ((_) @call.inner)*) @call.outer
+
+(method_call
   arguments: ((_) @call.inner)*) @call.outer
 ; }}}
 
