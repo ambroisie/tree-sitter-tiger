@@ -13,6 +13,12 @@
 (if_expression
   consequence: (_) @conditional.inner
   alternative: (_)? @conditional.inner) @conditional.outer
+
+(while_expression
+  body: (_) @loop.inner) @loop.outer
+
+(for_expression
+  body: (_) @loop.inner) @loop.outer
 ; }}}
 
 ; Misc {{{
