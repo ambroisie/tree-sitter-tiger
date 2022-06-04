@@ -41,6 +41,12 @@
   "type"
   "var"
   "while"
+
+  "_cast"
+  "_chunks"
+  "_exp"
+  "_lvalue"
+  "_namety"
 ] @keyword
 ; }}}
 
