@@ -12,6 +12,7 @@
 
 ; Misc{{{
 (comment) @ignore
+(string_literal) @ignore
 ; }}}
 
 ; vim: sw=2 foldmethod=marker
