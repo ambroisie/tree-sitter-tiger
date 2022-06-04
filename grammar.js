@@ -338,4 +338,4 @@ module.exports = grammar({
   }
 });
 
-// vim: sw=2
+// vim: foldmethod=marker sw=2
