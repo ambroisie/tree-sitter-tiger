@@ -7,12 +7,12 @@ function sepBy(sep, rule) {
 }
 
 const PREC = {
-  assign: 6,
-  multiplicative: 5,
-  additive: 4,
-  comparative: 3,
-  and: 2,
-  or: 1,
+  multiplicative: 6,
+  additive: 5,
+  comparative: 4,
+  and: 3,
+  or: 2,
+  assign: 1,
 };
 
 module.exports = grammar({
