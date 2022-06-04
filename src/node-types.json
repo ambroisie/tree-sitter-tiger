@@ -64,6 +64,14 @@
             "named": true
           },
           {
+            "type": "method_call",
+            "named": true
+          },
+          {
+            "type": "new_expression",
+            "named": true
+          },
+          {
             "type": "nil_literal",
             "named": true
           },
@@ -151,6 +159,14 @@
           },
           {
             "type": "meta_lvalue",
+            "named": true
+          },
+          {
+            "type": "method_call",
+            "named": true
+          },
+          {
+            "type": "new_expression",
             "named": true
           },
           {
@@ -306,6 +322,14 @@
             "named": true
           },
           {
+            "type": "method_call",
+            "named": true
+          },
+          {
+            "type": "new_expression",
+            "named": true
+          },
+          {
             "type": "nil_literal",
             "named": true
           },
@@ -424,6 +448,14 @@
             "named": true
           },
           {
+            "type": "method_call",
+            "named": true
+          },
+          {
+            "type": "new_expression",
+            "named": true
+          },
+          {
             "type": "nil_literal",
             "named": true
           },
@@ -530,6 +562,14 @@
             "named": true
           },
           {
+            "type": "method_call",
+            "named": true
+          },
+          {
+            "type": "new_expression",
+            "named": true
+          },
+          {
             "type": "nil_literal",
             "named": true
           },
@@ -630,6 +670,14 @@
             "named": true
           },
           {
+            "type": "method_call",
+            "named": true
+          },
+          {
+            "type": "new_expression",
+            "named": true
+          },
+          {
             "type": "nil_literal",
             "named": true
           },
@@ -659,6 +707,234 @@
           }
         ]
       }
+    }
+  },
+  {
+    "type": "class_declaration",
+    "named": true,
+    "fields": {
+      "fields": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "field_declaration",
+            "named": true
+          },
+          {
+            "type": "method_declaration",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "extends_qualifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "class_type",
+    "named": true,
+    "fields": {
+      "fields": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "field_declaration",
+            "named": true
+          },
+          {
+            "type": "method_declaration",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "extends_qualifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "extends_qualifier",
+    "named": true,
+    "fields": {
+      "super": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "meta_type_identifier",
+            "named": true
+          },
+          {
+            "type": "type_identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "field_declaration",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "meta_type_identifier",
+            "named": true
+          },
+          {
+            "type": "type_identifier",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "array_expression",
+            "named": true
+          },
+          {
+            "type": "array_value",
+            "named": true
+          },
+          {
+            "type": "assignment_expression",
+            "named": true
+          },
+          {
+            "type": "binary_expression",
+            "named": true
+          },
+          {
+            "type": "break_expression",
+            "named": true
+          },
+          {
+            "type": "for_expression",
+            "named": true
+          },
+          {
+            "type": "function_call",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "if_expression",
+            "named": true
+          },
+          {
+            "type": "integer_literal",
+            "named": true
+          },
+          {
+            "type": "let_expression",
+            "named": true
+          },
+          {
+            "type": "meta_cast",
+            "named": true
+          },
+          {
+            "type": "meta_expression",
+            "named": true
+          },
+          {
+            "type": "meta_lvalue",
+            "named": true
+          },
+          {
+            "type": "method_call",
+            "named": true
+          },
+          {
+            "type": "new_expression",
+            "named": true
+          },
+          {
+            "type": "nil_literal",
+            "named": true
+          },
+          {
+            "type": "record_expression",
+            "named": true
+          },
+          {
+            "type": "record_value",
+            "named": true
+          },
+          {
+            "type": "sequence_expression",
+            "named": true
+          },
+          {
+            "type": "string_literal",
+            "named": true
+          },
+          {
+            "type": "unary_expression",
+            "named": true
+          },
+          {
+            "type": "while_expression",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "operator",
+          "named": true
+        }
+      ]
     }
   },
   {
@@ -723,6 +999,14 @@
           },
           {
             "type": "meta_lvalue",
+            "named": true
+          },
+          {
+            "type": "method_call",
+            "named": true
+          },
+          {
+            "type": "new_expression",
             "named": true
           },
           {
@@ -813,6 +1097,14 @@
           },
           {
             "type": "meta_lvalue",
+            "named": true
+          },
+          {
+            "type": "method_call",
+            "named": true
+          },
+          {
+            "type": "new_expression",
             "named": true
           },
           {
@@ -913,6 +1205,14 @@
           },
           {
             "type": "meta_lvalue",
+            "named": true
+          },
+          {
+            "type": "method_call",
+            "named": true
+          },
+          {
+            "type": "new_expression",
             "named": true
           },
           {
@@ -1026,6 +1326,14 @@
             "named": true
           },
           {
+            "type": "method_call",
+            "named": true
+          },
+          {
+            "type": "new_expression",
+            "named": true
+          },
+          {
             "type": "nil_literal",
             "named": true
           },
@@ -1129,6 +1437,14 @@
           },
           {
             "type": "meta_lvalue",
+            "named": true
+          },
+          {
+            "type": "method_call",
+            "named": true
+          },
+          {
+            "type": "new_expression",
             "named": true
           },
           {
@@ -1262,6 +1578,14 @@
             "named": true
           },
           {
+            "type": "method_call",
+            "named": true
+          },
+          {
+            "type": "new_expression",
+            "named": true
+          },
+          {
             "type": "nil_literal",
             "named": true
           },
@@ -1352,6 +1676,14 @@
             "named": true
           },
           {
+            "type": "method_call",
+            "named": true
+          },
+          {
+            "type": "new_expression",
+            "named": true
+          },
+          {
             "type": "nil_literal",
             "named": true
           },
@@ -1439,6 +1771,14 @@
           },
           {
             "type": "meta_lvalue",
+            "named": true
+          },
+          {
+            "type": "method_call",
+            "named": true
+          },
+          {
+            "type": "new_expression",
             "named": true
           },
           {
@@ -1558,6 +1898,14 @@
             "named": true
           },
           {
+            "type": "method_call",
+            "named": true
+          },
+          {
+            "type": "new_expression",
+            "named": true
+          },
+          {
             "type": "nil_literal",
             "named": true
           },
@@ -1591,6 +1939,10 @@
         "multiple": true,
         "required": false,
         "types": [
+          {
+            "type": "class_declaration",
+            "named": true
+          },
           {
             "type": "function_declaration",
             "named": true
@@ -1684,6 +2036,14 @@
             "named": true
           },
           {
+            "type": "method_call",
+            "named": true
+          },
+          {
+            "type": "new_expression",
+            "named": true
+          },
+          {
             "type": "nil_literal",
             "named": true
           },
@@ -1719,6 +2079,10 @@
         "types": [
           {
             "type": "array_type",
+            "named": true
+          },
+          {
+            "type": "class_type",
             "named": true
           },
           {
@@ -1794,6 +2158,304 @@
           "named": true
         }
       ]
+    }
+  },
+  {
+    "type": "method_call",
+    "named": true,
+    "fields": {
+      "arguments": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": ",",
+            "named": false
+          },
+          {
+            "type": "array_expression",
+            "named": true
+          },
+          {
+            "type": "array_value",
+            "named": true
+          },
+          {
+            "type": "assignment_expression",
+            "named": true
+          },
+          {
+            "type": "binary_expression",
+            "named": true
+          },
+          {
+            "type": "break_expression",
+            "named": true
+          },
+          {
+            "type": "for_expression",
+            "named": true
+          },
+          {
+            "type": "function_call",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "if_expression",
+            "named": true
+          },
+          {
+            "type": "integer_literal",
+            "named": true
+          },
+          {
+            "type": "let_expression",
+            "named": true
+          },
+          {
+            "type": "meta_cast",
+            "named": true
+          },
+          {
+            "type": "meta_expression",
+            "named": true
+          },
+          {
+            "type": "meta_lvalue",
+            "named": true
+          },
+          {
+            "type": "method_call",
+            "named": true
+          },
+          {
+            "type": "new_expression",
+            "named": true
+          },
+          {
+            "type": "nil_literal",
+            "named": true
+          },
+          {
+            "type": "record_expression",
+            "named": true
+          },
+          {
+            "type": "record_value",
+            "named": true
+          },
+          {
+            "type": "sequence_expression",
+            "named": true
+          },
+          {
+            "type": "string_literal",
+            "named": true
+          },
+          {
+            "type": "unary_expression",
+            "named": true
+          },
+          {
+            "type": "while_expression",
+            "named": true
+          }
+        ]
+      },
+      "method": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "object": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "array_value",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "meta_lvalue",
+            "named": true
+          },
+          {
+            "type": "record_value",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "method_declaration",
+    "named": true,
+    "fields": {
+      "body": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "array_expression",
+            "named": true
+          },
+          {
+            "type": "array_value",
+            "named": true
+          },
+          {
+            "type": "assignment_expression",
+            "named": true
+          },
+          {
+            "type": "binary_expression",
+            "named": true
+          },
+          {
+            "type": "break_expression",
+            "named": true
+          },
+          {
+            "type": "for_expression",
+            "named": true
+          },
+          {
+            "type": "function_call",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "if_expression",
+            "named": true
+          },
+          {
+            "type": "integer_literal",
+            "named": true
+          },
+          {
+            "type": "let_expression",
+            "named": true
+          },
+          {
+            "type": "meta_cast",
+            "named": true
+          },
+          {
+            "type": "meta_expression",
+            "named": true
+          },
+          {
+            "type": "meta_lvalue",
+            "named": true
+          },
+          {
+            "type": "method_call",
+            "named": true
+          },
+          {
+            "type": "new_expression",
+            "named": true
+          },
+          {
+            "type": "nil_literal",
+            "named": true
+          },
+          {
+            "type": "record_expression",
+            "named": true
+          },
+          {
+            "type": "record_value",
+            "named": true
+          },
+          {
+            "type": "sequence_expression",
+            "named": true
+          },
+          {
+            "type": "string_literal",
+            "named": true
+          },
+          {
+            "type": "unary_expression",
+            "named": true
+          },
+          {
+            "type": "while_expression",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "parameters": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "parameters",
+            "named": true
+          }
+        ]
+      },
+      "return_type": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "meta_type_identifier",
+            "named": true
+          },
+          {
+            "type": "type_identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "new_expression",
+    "named": true,
+    "fields": {
+      "class": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "meta_type_identifier",
+            "named": true
+          },
+          {
+            "type": "type_identifier",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {
@@ -1938,6 +2600,14 @@
           },
           {
             "type": "meta_lvalue",
+            "named": true
+          },
+          {
+            "type": "method_call",
+            "named": true
+          },
+          {
+            "type": "new_expression",
             "named": true
           },
           {
@@ -2119,6 +2789,14 @@
           "named": true
         },
         {
+          "type": "method_call",
+          "named": true
+        },
+        {
+          "type": "new_expression",
+          "named": true
+        },
+        {
           "type": "nil_literal",
           "named": true
         },
@@ -2178,6 +2856,10 @@
           "named": true
         },
         {
+          "type": "class_declaration",
+          "named": true
+        },
+        {
           "type": "for_expression",
           "named": true
         },
@@ -2223,6 +2905,14 @@
         },
         {
           "type": "meta_lvalue",
+          "named": true
+        },
+        {
+          "type": "method_call",
+          "named": true
+        },
+        {
+          "type": "new_expression",
           "named": true
         },
         {
@@ -2325,6 +3015,10 @@
             "named": true
           },
           {
+            "type": "class_type",
+            "named": true
+          },
+          {
             "type": "record_type",
             "named": true
           },
@@ -2398,6 +3092,14 @@
           },
           {
             "type": "meta_lvalue",
+            "named": true
+          },
+          {
+            "type": "method_call",
+            "named": true
+          },
+          {
+            "type": "new_expression",
             "named": true
           },
           {
@@ -2531,6 +3233,14 @@
             "named": true
           },
           {
+            "type": "method_call",
+            "named": true
+          },
+          {
+            "type": "new_expression",
+            "named": true
+          },
+          {
             "type": "nil_literal",
             "named": true
           },
@@ -2637,6 +3347,14 @@
             "named": true
           },
           {
+            "type": "method_call",
+            "named": true
+          },
+          {
+            "type": "new_expression",
+            "named": true
+          },
+          {
             "type": "nil_literal",
             "named": true
           },
@@ -2724,6 +3442,14 @@
           },
           {
             "type": "meta_lvalue",
+            "named": true
+          },
+          {
+            "type": "method_call",
+            "named": true
+          },
+          {
+            "type": "new_expression",
             "named": true
           },
           {
@@ -2827,6 +3553,10 @@
     "named": true
   },
   {
+    "type": "class",
+    "named": false
+  },
+  {
     "type": "comment",
     "named": true
   },
@@ -2845,6 +3575,10 @@
   {
     "type": "escape_sequence",
     "named": true
+  },
+  {
+    "type": "extends",
+    "named": false
   },
   {
     "type": "field_identifier",
@@ -2880,6 +3614,14 @@
   },
   {
     "type": "let",
+    "named": false
+  },
+  {
+    "type": "method",
+    "named": false
+  },
+  {
+    "type": "new",
     "named": false
   },
   {

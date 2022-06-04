@@ -1,0 +1,132 @@
+================================================================================
+New expression
+================================================================================
+
+new Object
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (new_expression
+    class: (type_identifier)))
+
+================================================================================
+Method call
+================================================================================
+
+object.method(12, "27")
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (method_call
+    object: (identifier)
+    method: (identifier)
+    arguments: (integer_literal)
+    arguments: (string_literal)))
+
+================================================================================
+Class declaration
+================================================================================
+
+class A { }
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (class_declaration
+    name: (identifier)))
+
+================================================================================
+Class type
+================================================================================
+
+type A = class { }
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (type_declaration
+    (identifier)
+    (class_type)))
+
+================================================================================
+Class declaration extends
+================================================================================
+
+class A extends Object { }
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (class_declaration
+    name: (identifier)
+    (extends_qualifier
+      super: (type_identifier))))
+
+================================================================================
+Class type
+================================================================================
+
+type A = class extends Object { }
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (type_declaration
+    name: (identifier)
+    value: (class_type
+      (extends_qualifier
+        super: (type_identifier)))))
+
+================================================================================
+Class field
+================================================================================
+
+class A {
+  var a : int := 12
+  var b := 27
+}
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (class_declaration
+    name: (identifier)
+    fields: (field_declaration
+      name: (identifier)
+      type: (type_identifier)
+      (operator)
+      value: (integer_literal))
+    fields: (field_declaration
+      name: (identifier)
+      (operator)
+      value: (integer_literal))))
+
+================================================================================
+Class method
+================================================================================
+
+class A {
+  method m(a: int, b: string) : int = a
+  method n() = ()
+}
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (class_declaration
+    name: (identifier)
+    fields: (method_declaration
+      name: (identifier)
+      parameters: (parameters
+        name: (identifier)
+        type: (type_identifier)
+        name: (identifier)
+        type: (type_identifier))
+      return_type: (type_identifier)
+      body: (identifier))
+    fields: (method_declaration
+      name: (identifier)
+      parameters: (parameters)
+      body: (sequence_expression))))

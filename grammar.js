@@ -25,6 +25,8 @@ module.exports = grammar({
     $._type_identifier,
     $._field_identifier,
     $._function_declaration_common,
+    $._class_declaration_common,
+    $._class_field,
   ],
 
   conflicts: ($) => [
@@ -74,6 +76,9 @@ module.exports = grammar({
       $.for_expression,
       $.break_expression,
       $.let_expression,
+
+      $.new_expression,
+      $.method_call,
 
       $.meta_cast,
       $.meta_expression,
@@ -263,6 +268,7 @@ module.exports = grammar({
     _declaration_chunk: ($) => prec.left(
       choice(
         repeat1($.type_declaration),
+        repeat1($.class_declaration),
         repeat1(choice($.function_declaration, $.primitive_declaration)),
         $.variable_declaration,
         $.import_declaration,
@@ -280,6 +286,7 @@ module.exports = grammar({
       $.type_alias,
       $.record_type,
       $.array_type,
+      $.class_type,
     ),
 
     type_alias: ($) => $._type_identifier,
@@ -345,6 +352,61 @@ module.exports = grammar({
     import_declaration: ($) => seq(
       "import",
       field("file", $.string_literal),
+    ),
+
+    // }}}
+
+    // Object Oriented {{{
+
+    new_expression: ($) => seq(
+      "new",
+      field("class", $._type_identifier),
+    ),
+
+    method_call: ($) => seq(
+      field("object", $._lvalue),
+      ".",
+      field("method", $.identifier),
+      "(",
+      field("arguments", sepBy(",", $._expr)),
+      ")",
+    ),
+
+    class_declaration: ($) => seq(
+      "class",
+      field("name", $.identifier),
+      $._class_declaration_common,
+    ),
+
+    class_type: ($) => seq(
+      "class",
+      $._class_declaration_common,
+    ),
+
+    _class_declaration_common: ($) => seq(
+      optional($.extends_qualifier),
+      "{",
+      field("fields", repeat($._class_field)),
+      "}",
+    ),
+
+    extends_qualifier: ($) => seq(
+      "extends",
+      field("super", $._type_identifier),
+    ),
+
+    _class_field: ($) => choice(
+      $._field_declaration,
+      $.method_declaration,
+    ),
+
+    _field_declaration: ($) => alias($.variable_declaration, $.field_declaration),
+
+    method_declaration: ($) => seq(
+      "method",
+      $._function_declaration_common,
+      "=",
+      field("body", $._expr),
     ),
 
     // }}}
