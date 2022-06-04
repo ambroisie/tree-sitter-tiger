@@ -1,0 +1,24 @@
+let
+  class A extends Object {}
+  /* <- keyword */
+  /*      ^ keyword */
+  /*              ^ type */
+
+  type B = class extends A {
+  /*       ^ keyword */
+  /*             ^ keyword */
+  /*                     ^ type */
+
+    var a := 12
+
+    method meth() : int = self.a
+    /* <- keyword */
+    /*                    ^ variable */
+  }
+
+  var object := new B
+  /*            ^ keyword */
+in
+  object.a := 27;
+  /*     ^ property */
+end

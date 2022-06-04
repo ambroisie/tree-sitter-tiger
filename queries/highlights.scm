@@ -42,6 +42,11 @@
   "var"
   "while"
 
+  "class"
+  "extends"
+  "method"
+  "new"
+
   "_cast"
   "_chunks"
   "_exp"
