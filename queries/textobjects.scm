@@ -21,6 +21,13 @@
   body: (_) @loop.inner) @loop.outer
 ; }}}
 
+; Class {{{
+(class_declaration
+  fields: (_)* @class.inner) @class.outer
+(class_type
+  fields: (_)* @class.inner) @class.outer
+; }}}
+
 ; Misc {{{
 (comment) @comment.outer
 ; }}}
