@@ -10,6 +10,13 @@
   body: (_) @indent)
 ; }}}
 
+; Class {{{
+(class_declaration
+  fields: (_)* @indent)
+(class_type
+  fields: (_)* @indent)
+; }}}
+
 ; Misc{{{
 (comment) @ignore
 (string_literal) @ignore
