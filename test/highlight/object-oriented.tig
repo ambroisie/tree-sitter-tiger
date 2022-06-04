@@ -13,6 +13,7 @@ let
 
     method meth() : int = self.a
     /* <- keyword */
+    /*     ^ method */
     /*                    ^ variable */
   }
 
@@ -21,4 +22,7 @@ let
 in
   object.a := 27;
   /*     ^ property */
+
+  object.meth()
+  /*     ^ method */
 end

@@ -75,13 +75,18 @@
 ] @punctuation.bracket
 ; }}}
 
-; Functions {{{
+; Functions and methods {{{
 (function_call
   function: (identifier) @function)
 (function_declaration
   name: (identifier) @function)
 (primitive_declaration
   name: (identifier) @function)
+
+(method_call
+  method: (identifier) @method)
+(method_declaration
+  name: (identifier) @method)
 
 (parameters
   name: (identifier) @variable.parameter)
