@@ -7,6 +7,10 @@
 ((type_identifier) @type.builtin
   (#match? @type.builtin "^(int|string|Object)$")
   (#is-not? local))
+
+((identifier) @variable.builtin
+  (#match? @variable.builtin "^self$")
+  (#is-not? local))
 ; }}}
 
 ; Keywords {{{

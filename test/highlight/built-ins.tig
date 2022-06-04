@@ -18,6 +18,8 @@ let
   /*      ^ type.builtin */
 
   type Object = int
+
+  var self := "self"
 in
   let
     var c : int := "This is an int"
@@ -32,6 +34,9 @@ in
 
   print("shadowing is fun");
   /* <- function.builtin */
+
+  self;
+  /* <- variable */
 
   b := print
   /*   ^ variable */
