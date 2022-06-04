@@ -2,7 +2,7 @@ let
   class A extends Object {}
   /* <- keyword */
   /*      ^ keyword */
-  /*              ^ type */
+  /*              ^ type.builtin */
 
   type B = class extends A {
   /*       ^ keyword */

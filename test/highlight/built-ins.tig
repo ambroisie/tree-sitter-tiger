@@ -13,9 +13,16 @@ let
 
   var c : int := "This is an \"int\""
   /*      ^ type.builtin (not sure why it isn't 'type')*/
+
+  var d : Object := nil
+  /*      ^ type.builtin */
+
+  type Object = int
 in
   let
     var c : int := "This is an int"
+    /*      ^ type.builtin (not sure why it isn't 'type')*/
+    var d : Object := "This is an object"
     /*      ^ type.builtin (not sure why it isn't 'type')*/
   in
   end;

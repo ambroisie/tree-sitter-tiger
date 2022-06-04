@@ -5,7 +5,7 @@
   (#is-not? local))
 
 ((type_identifier) @type.builtin
-  (#match? @type.builtin "^(int|string)$")
+  (#match? @type.builtin "^(int|string|Object)$")
   (#is-not? local))
 ; }}}
 
