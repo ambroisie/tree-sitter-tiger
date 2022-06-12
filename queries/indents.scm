@@ -45,6 +45,8 @@
 
 (record_expression) @indent
 "}" @branch
+
+(variable_declaration) @indent
 ; }}}
 
 ; Misc{{{
