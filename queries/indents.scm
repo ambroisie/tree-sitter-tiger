@@ -24,6 +24,18 @@
 ")" @branch
 ; }}}
 
+; Functions and methods {{{
+(parameters) @indent
+
+(function_call) @indent
+(method_call) @indent
+")" @branch
+
+(function_declaration) @indent
+(primitive_declaration) @indent
+(method_declaration) @indent
+; }}}
+
 ; Misc{{{
 (comment) @ignore
 (string_literal) @ignore
