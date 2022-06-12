@@ -36,6 +36,17 @@
 (method_declaration) @indent
 ; }}}
 
+; Values and expressions {{{
+(array_value) @indent
+"]" @branch
+
+(array_expression) @indent
+"of" @branch
+
+(record_expression) @indent
+"}" @branch
+; }}}
+
 ; Misc{{{
 (comment) @ignore
 (string_literal) @ignore
