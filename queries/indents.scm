@@ -15,6 +15,15 @@
 (class_type) @indent
 ; }}}
 
+; Groups {{{
+(let_expression) @indent
+"in" @branch
+"end" @branch
+
+(sequence_expression) @indent
+")" @branch
+; }}}
+
 ; Misc{{{
 (comment) @ignore
 (string_literal) @ignore
