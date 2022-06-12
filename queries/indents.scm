@@ -1,20 +1,18 @@
 ; Control flow {{{
-(if_expression
-  consequence: (_) @indent)
+(if_expression) @indent
+"then" @branch
 "else" @branch
 
-(while_expression
-  body: (_) @indent)
+(while_expression) @indent
+"do" @branch
 
-(for_expression
-  body: (_) @indent)
+(for_expression) @indent
+"to" @branch
 ; }}}
 
 ; Class {{{
-(class_declaration
-  fields: (_)* @indent)
-(class_type
-  fields: (_)* @indent)
+(class_declaration) @indent
+(class_type) @indent
 ; }}}
 
 ; Misc{{{
