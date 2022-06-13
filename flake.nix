@@ -54,6 +54,14 @@
           overlays = [ self.overlays.default ];
         };
 
+        nvim-test = pkgs.writeShellScriptBin "nvim-test" ''
+          export NVIM_PLENARY='${pkgs.vimPlugins.plenary-nvim}'
+          export NVIM_TREESITTER='${pkgs.vimPlugins.nvim-treesitter}'
+
+          ${pkgs.neovim}/bin/nvim --headless --noplugin -u scripts/minimal_init.lua \
+              -c "PlenaryBustedDirectory test/ { minimal_init = './scripts/minimal_init.lua' }"
+        '';
+
         tree-sitter-env = pkgs.stdenv.mkDerivation {
           name = "tree-sitter-env";
 
@@ -94,6 +102,13 @@
                 enable = true;
               };
 
+              nvim-test = {
+                enable = true;
+                name = "nvim tests";
+                entry = "${nvim-test}/bin/nvim-test";
+                pass_filenames = false;
+              };
+
               tree-sitter = {
                 enable = true;
                 name = "tree-sitter tests";
@@ -115,6 +130,7 @@
           default = pkgs.mkShell {
             nativeBuildInputs = with pkgs; [
               nodejs
+              nvim-test
               (tree-sitter.override { webUISupport = true; })
             ];
 
