@@ -1,7 +1,7 @@
 [package]
 name = "tree-sitter-tiger"
 description = "Tiger grammar for the tree-sitter parsing library"
-version = "0.1.2"
+version = "0.2.0"
 keywords = ["incremental", "parsing", "tiger"]
 categories = ["parsing", "text-editors"]
 repository = "https://gitea.belanyi.fr/ambroisie/tree-sitter-tiger"
