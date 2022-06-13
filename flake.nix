@@ -63,6 +63,8 @@
         '';
 
         bump-version = pkgs.writeShellScriptBin "bump-version" ''
+          set -eu
+
           NEW_VERSION="''${1}"
 
           ${pkgs.jq}/bin/jq ".version = \"''${NEW_VERSION}\"" package.json > package.json.tmp
@@ -70,7 +72,7 @@
           ${pkgs.gnused}/bin/sed -i -e "s/version = \"[0-9.]\\+\"/version = \"''${NEW_VERSION}\"/" Cargo.toml
 
           git add Cargo.toml package.json
-          git commit -eF <(echo "Release ''${NEW_VERSION}")
+          echo "Release ''${NEW_VERSION}" | git commit -eF -
           git tag -a "v''${NEW_VERSION}" -m "Release ''${NEW_VERSION}"
         '';
 
