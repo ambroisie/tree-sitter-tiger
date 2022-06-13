@@ -62,6 +62,18 @@
               -c "PlenaryBustedDirectory test/ { minimal_init = './scripts/minimal_init.lua' }"
         '';
 
+        bump-version = pkgs.writeShellScriptBin "bump-version" ''
+          NEW_VERSION="''${1}"
+
+          ${pkgs.jq}/bin/jq ".version = \"''${NEW_VERSION}\"" package.json > package.json.tmp
+          mv package.json.tmp package.json
+          ${pkgs.gnused}/bin/sed -i -e "s/version = \"[0-9.]\\+\"/version = \"''${NEW_VERSION}\"/" Cargo.toml
+
+          git add Cargo.toml package.json
+          git commit -eF <(echo "Release ''${NEW_VERSION}")
+          git tag -a "v''${NEW_VERSION}" -m "Release ''${NEW_VERSION}"
+        '';
+
         tree-sitter-env = pkgs.stdenv.mkDerivation {
           name = "tree-sitter-env";
 
@@ -129,6 +141,7 @@
         devShells = {
           default = pkgs.mkShell {
             nativeBuildInputs = with pkgs; [
+              bump-version
               nodejs
               nvim-test
               (tree-sitter.override { webUISupport = true; })
