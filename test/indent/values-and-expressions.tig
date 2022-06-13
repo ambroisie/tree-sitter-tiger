@@ -1,6 +1,12 @@
 let
   type array_of_int = array of int
 
+  type record = {
+    a: int,
+    b: string,
+    c: type
+  }
+
   var a :=
     "a string"
 in

@@ -54,6 +54,10 @@
 "}" @branch
 (record_expression "}" @indent_end)
 
+(record_type) @indent
+"}" @branch
+(record_type "}" @indent_end)
+
 (variable_declaration) @indent
 ; }}}
 
