@@ -9,6 +9,8 @@
   (function_declaration)
   (primitive_declaration)
 
+  (record_type)
+
   (class_declaration)
   (class_type)
   (method_declaration)
