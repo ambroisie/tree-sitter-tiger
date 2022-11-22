@@ -12,7 +12,7 @@ let
     var a := 12
 
     method meth() : int = self.a
-    /* <- keyword.method */
+    /* <- keyword.function */
     /*     ^ method */
     /*                    ^ variable.builtin */
   }

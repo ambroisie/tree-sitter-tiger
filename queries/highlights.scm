@@ -16,6 +16,7 @@
 ; Keywords {{{
 [
  "function"
+ "method"
  "primitive"
 ] @keyword.function
 
@@ -30,9 +31,6 @@
  "new"
 ] @keyword.constructor
 
-[
- "method"
-] @keyword.method
 
 [
   "import"
