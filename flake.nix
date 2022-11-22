@@ -104,12 +104,9 @@
             hooks = {
               clang-format = {
                 enable = true;
-                name = "clang-format";
-                entry = "${pkgs.clang-tools}/bin/clang-format -style=file -i";
                 types = [ "text" "c" ];
                 # I don't care for generated files' formatting
                 excludes = [ "src/parser.c" "src/tree_sitter/parser.h" ];
-                language = "system";
               };
 
               nixpkgs-fmt = {
