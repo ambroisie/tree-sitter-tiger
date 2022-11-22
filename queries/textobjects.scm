@@ -31,8 +31,9 @@
 ; Class {{{
 (class_declaration
   fields: (_)* @class.inner) @class.outer
-(class_type
-  fields: (_)* @class.inner) @class.outer
+(type_declaration
+ (class_type
+   fields: (_)* @class.inner)) @class.outer
 ; }}}
 
 ; Misc {{{
