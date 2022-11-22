@@ -94,7 +94,7 @@
   name: (identifier) @method)
 
 (parameters
-  name: (identifier) @variable.parameter)
+  name: (identifier) @parameter)
 ; }}}
 
 ; Declarations {{{
