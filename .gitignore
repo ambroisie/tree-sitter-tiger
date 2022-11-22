@@ -4,3 +4,5 @@
 
 # Tree-sitter artifact
 /tree-sitter-tiger.wasm
+# Rust bindings
+/target
