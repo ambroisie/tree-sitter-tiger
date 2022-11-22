@@ -35,6 +35,10 @@
 ] @keyword.method
 
 [
+  "import"
+] @include
+
+[
   "array"
   (break_expression)
   "do"
