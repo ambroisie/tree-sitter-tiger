@@ -1,0 +1,31 @@
+labels:
+  type: exec
+
+pipeline:
+- name: flake check
+  image: bash
+  commands:
+  - nix flake check
+
+- name: package check
+  image: bash
+  commands:
+  - nix build
+
+- name: notify
+  image: bash
+  secrets:
+  - source: matrix_roomid
+    target: room
+  - source: matrix_username
+    target: user
+  - source: matrix_password
+    target: pass
+  - source: matrix_homeserver
+    target: address
+  commands:
+  - nix run github:ambroisie/matrix-notifier
+  when:
+    status:
+    - failure
+    - success
