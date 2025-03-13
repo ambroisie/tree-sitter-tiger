@@ -1932,14 +1932,6 @@
     [
       "_lvalue",
       "array_expression"
-    ],
-    [
-      "_lvalue",
-      "record_expression"
-    ],
-    [
-      "_lvalue",
-      "_type_identifier"
     ]
   ],
   "precedences": [],

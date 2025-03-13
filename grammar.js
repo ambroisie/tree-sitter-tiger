@@ -31,8 +31,6 @@ module.exports = grammar({
 
   conflicts: ($) => [
     [$._lvalue, $.array_expression],
-    [$._lvalue, $.record_expression],
-    [$._lvalue, $._type_identifier],
   ],
 
   externals: ($) => [
