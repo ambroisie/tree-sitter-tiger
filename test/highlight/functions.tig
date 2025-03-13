@@ -1,8 +1,8 @@
 primitive print(s: string)
 /*        ^ function */
-/*              ^ parameter */
+/*              ^ variable.parameter */
 
 function func(a: int) : int = (print("Hello World!"); a)
 /*       ^ function */
-/*            ^ parameter */
-/*                             ^ function */
+/*            ^ variable.parameter */
+/*                             ^ function.builtin */

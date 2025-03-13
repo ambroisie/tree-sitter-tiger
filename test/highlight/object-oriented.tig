@@ -1,11 +1,11 @@
 let
   class A extends Object {}
-  /* <- keyword */
+  /* <- keyword.type */
   /*      ^ keyword */
   /*              ^ type.builtin */
 
   type B = class extends A {
-  /*       ^ keyword */
+  /*       ^ keyword.type */
   /*             ^ keyword */
   /*                     ^ type */
 
@@ -13,16 +13,16 @@ let
 
     method meth() : int = self.a
     /* <- keyword.function */
-    /*     ^ method */
+    /*     ^ function.method */
     /*                    ^ variable.builtin */
   }
 
   var object := new B
-  /*            ^ keyword.constructor */
+  /*            ^ keyword.operator */
 in
   object.a := 27;
-  /*     ^ property */
+  /*     ^ variable.member */
 
   object.meth()
-  /*     ^ method */
+  /*     ^ function.method */
 end

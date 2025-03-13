@@ -1,23 +1,22 @@
 ; Built-ins {{{
 ((function_call
   function: (identifier) @function.builtin)
-  (#match? @function.builtin "^(chr|concat|exit|flush|getchar|not|ord|print|print_err|print_int|size|strcmp|streq|substring)$")
-  (#is-not? local))
+  (#any-of? @function.builtin
+    "chr" "concat" "exit" "flush" "getchar" "not" "ord" "print" "print_err" "print_int" "size"
+    "strcmp" "streq" "substring"))
 
 ((type_identifier) @type.builtin
-  (#match? @type.builtin "^(int|string|Object)$")
-  (#is-not? local))
+  (#any-of? @type.builtin "int" "string" "Object"))
 
 ((identifier) @variable.builtin
-  (#match? @variable.builtin "^self$")
-  (#is-not? local))
-; }}}
+  (#eq? @variable.builtin "self"))
 
+; }}}
 ; Keywords {{{
 [
- "function"
- "method"
- "primitive"
+  "function"
+  "primitive"
+  "method"
 ] @keyword.function
 
 [
@@ -27,14 +26,9 @@
   "while"
 ] @keyword.repeat
 
-[
- "new"
-] @keyword.constructor
+"new" @keyword.operator
 
-
-[
-  "import"
-] @include
+"import" @keyword.import
 
 [
   "array"
@@ -48,73 +42,80 @@
   "then"
   "type"
   "var"
-
-  "class"
   "extends"
-
   "_cast"
   "_chunks"
   "_exp"
   "_lvalue"
   "_namety"
 ] @keyword
-; }}}
 
+"class" @keyword.type
+
+; }}}
 ; Operators {{{
 (operator) @operator
 
 [
- ","
- ";"
- ":"
- "."
+  ","
+  ";"
+  ":"
+  "."
 ] @punctuation.delimiter
 
 [
- "("
- ")"
- "["
- "]"
- "{"
- "}"
+  "("
+  ")"
+  "["
+  "]"
+  "{"
+  "}"
 ] @punctuation.bracket
-; }}}
 
+; }}}
 ; Functions and methods {{{
 (function_call
   function: (identifier) @function)
+
 (function_declaration
   name: (identifier) @function)
+
 (primitive_declaration
   name: (identifier) @function)
 
 (method_call
-  method: (identifier) @method)
+  method: (identifier) @function.method)
+
 (method_declaration
-  name: (identifier) @method)
+  name: (identifier) @function.method)
 
 (parameters
-  name: (identifier) @parameter)
-; }}}
+  name: (identifier) @variable.parameter)
 
+; }}}
 ; Declarations {{{
 (import_declaration
   file: (string_literal) @string.special.path)
-; }}}
 
+; }}}
 ; Literals {{{
 (nil_literal) @constant.builtin
-(integer_literal) @number
-(string_literal) @string
-(escape_sequence) @string.escape
-; }}}
 
+(integer_literal) @number
+
+(string_literal) @string
+
+(escape_sequence) @string.escape
+
+; }}}
 ; Misc {{{
-(comment) @comment
+(comment) @comment ; @spell
 
 (type_identifier) @type
-(field_identifier) @property
-(identifier) @variable
-; }}}
 
+(field_identifier) @variable.member
+
+(identifier) @variable
+
+; }}}
 ; vim: sw=2 foldmethod=marker
